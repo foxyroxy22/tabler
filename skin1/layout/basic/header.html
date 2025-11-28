@@ -58,35 +58,44 @@
   </ez-prop>
   <div class="inner">
     <div class="top_nav_box" id="top_nav_box">
+      <div class="ham">
+        <button type="button">
+          <span class="burger-top"></span>
+          <span class="burger-middle"></span>
+          <span class="burger-bottom"></span>
+        </button>
+      </div>
+      <!-- ham -->
+
       <div class="top_logo" module="Layout_LogoTop">
-        <a href="/"
-          ><img
-            alt="쇼핑몰 이름"
-            data-ez-initialized
-            src
-            style="display: none"
-          />{$mall_name}</a
-        >
+        <a href="/">
+          <img
+            src="//ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/logo.png"
+            alt="tabler"
+            style="width: 120px"
+          />
+        </a>
       </div>
       <!-- //top_logo -->
-      <div class="top_nav">
-        <a class="eNavFold" href="javascript:;"
-          ><i aria-hidden="true" class="icon icoNav"></i
-        ></a>
-      </div>
-      <div data-ez-module="menu-main/1" data-ez-mode="manual">
-        <div
-          class="xans-element- xans-layout xans-layout-category top_category"
-        >
+
+      <div class="menu">
+        <nav>
           <ul>
-            <li><a href="/category/PRODUCT/53/">PRODUCT</a></li>
             <li>
-              <a href="/board/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD/1/">STORY</a>
+              <a href="/category/PRODUCT/53/">Products</a>
+            </li>
+            <li>
+              <a href="#">Story</a>
+            </li>
+            <li>
+              <a href="board/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD/1/"
+                >Contact</a
+              >
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
-      <!-- //menu-main/1 -->
+
       <div class="top_mypage">
         <a class="eSearch" href="javascript:;"
           ><!--@import(/svg/icon-search.html)--></a
