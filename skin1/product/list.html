@@ -1,7 +1,7 @@
 <!--@layout(/layout/basic/layout.html)-->
 <!--@js(/js/module/product/menucategory.js)-->
 <!--@css(/css/module/product/menupackage.css)-->
-<div class="section path" data-ez-module="product-head-breadcrumb/1" module="product_headcategory">
+<div class="section path" data-ez-module="product-head-breadcrumb/1" module="product_headcategory" data-ez="contents-01cftmb-1">
 <span>현재 위치</span>
 <ol>
 <li><a href="/">홈</a></li>
@@ -11,11 +11,11 @@
 <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
 </ol>
 </div>
-<div class="section titleArea" data-ez-module="product-list-head-title/1" module="product_headcategory">
+<div class="section titleArea" data-ez-module="product-list-head-title/1" module="product_headcategory" data-ez="contents-1xlgist-1">
 <h2>{$title_text_or_image}</h2>
 <span class="likeButton {$disp_likecate_class}"><button type="button">{$disp_likecate_icon}<strong>{$disp_likecate_count}</strong></button></span>
 </div>
-<div class="section ec-base-tab typeMenu" data-ez-module="product-list-subcategory/1">
+<div class="section ec-base-tab typeMenu" data-ez-module="product-list-subcategory/1" data-ez="contents-16zi0ca-1">
 <div class="display_tablet_only">
 <ul class="menuCategory menu">
 <li class="{$selected}" module="product_displaysubcategory" style="display:{$display};">
@@ -81,8 +81,8 @@
 </ul>
 </div>
 </div>
-<div class="section product_top_image" data-ez-module="product-list-categoryimage/1" module="product_headcategory">{$top_image1_tag}{$top_image2_tag}{$top_image3_tag}</div>
-<div class="section" data-ez-layout="grid4" data-ez-module="product-listrecommend/1">
+<div class="section product_top_image" data-ez-module="product-list-categoryimage/1" module="product_headcategory" data-ez="contents-0fra28o-1">{$top_image1_tag}{$top_image2_tag}{$top_image3_tag}</div>
+<div class="section" data-ez-layout="grid4" data-ez-module="product-listrecommend/1" data-ez="contents-1c8oazm-1">
 <div data-ez-holder="product_list">
 <div class="ec-base-product" module="product_listrecommend">
 <!--@css(/css/module/product/listrecommend_swipe.css)-->
@@ -109,7 +109,7 @@
 </div>
 </div><!-- //product_list -->
 </div>
-<div class="section" data-ez-layout="grid4" data-ez-module="product-listnew/1">
+<div class="section" data-ez-layout="grid4" data-ez-module="product-listnew/1" data-ez="contents-0lzhkyz-1">
 <div data-ez-holder="product_list">
 <div class="ec-base-product" module="product_listnew">
 <!--@css(/css/module/product/listnew_swipe.css)-->
@@ -136,7 +136,7 @@
 </div>
 </div><!-- //product_list -->
 </div>
-<div class="normalpackage_box section" data-ez-layout="grid4" data-ez-module="product-normalpackage/1">
+<div class="normalpackage_box section" data-ez-layout="grid4" data-ez-module="product-normalpackage/1" data-ez="contents-09vz1ri-1">
 <!--@import(/product/shoppQ/searchContent.html)-->
 <div class="product_scrollx" module="product_normalpackage">
 <!--@css(/css/module/product/listnormal.css)-->
@@ -159,7 +159,7 @@
 <p class="prdCount">총<strong class="txtEm">{$total_count}</strong>개의 상품이 있습니다.</p>
 <div class="sort">
 <select id="selArray" module="product_Orderby" name="selArray">
-<option value="">- 정렬방식 -</option>
+<option value>- 정렬방식 -</option>
 <option value="{$param}">{$sort_name}</option>
 <option value="{$param}">{$sort_name}</option>
 </select>
@@ -170,14 +170,14 @@
 <p>
 <!--@js(/js/module/product/product_selectsearch.js)-->
 <select class="FirstSelect" module="product_FirstSelect">
-<option value="">-조건선택-</option>
-<option value="{$value}" {$selected}="">{$title}</option>
-<option value="{$value}" {$selected}="">{$title}</option>
+<option value>-조건선택-</option>
+<option value="{$value}" {$selected}>{$title}</option>
+<option value="{$value}" {$selected}>{$title}</option>
 </select>
 <select class="SecondSelect" module="product_SecondSelect">
-<option value="">-조건선택-</option>
-<option value="{$value}" {$selected}="">{$title}</option>
-<option value="{$value}" {$selected}="">{$title}</option>
+<option value>-조건선택-</option>
+<option value="{$value}" {$selected}>{$title}</option>
+<option value="{$value}" {$selected}>{$title}</option>
 </select>
 <a class="btnSubmitFix" href="#SelectSearch">검색</a>
 </p>
@@ -219,3 +219,4 @@
 </div><!-- //product_list -->
 </div><!-- //product_normalpackage -->
 </div>
+<!--#ez="1/1"-->
