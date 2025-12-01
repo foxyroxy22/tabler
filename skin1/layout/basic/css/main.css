@@ -6,8 +6,17 @@
 #container #contents .xans-layout-mobileaction {
   display: none !important;
 }
-#header {
-  border-bottom: 1px solid #fff !important;
+header {
+  border-bottom: 0 !important;
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent !important;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80px;
 }
 
 /* 메인 타이틀 */
@@ -1068,4 +1077,224 @@
   .main_product_category .main_product_tab {
     justify-content: flex-start;
   }
+}
+
+/* ============================================================= */
+/* custom.css */
+#header.fixed {
+  background: #000 !important;
+  max-width: 100% !important;
+  padding: 0 45px 0 30px;
+}
+#header.fixed .menu li a {
+  color: #fff;
+}
+
+#header.fixed .inner .top_nav_box .top_mypage a:first-child svg path,
+#header.fixed .inner .top_nav_box .top_mypage a:nth-child(2) svg path,
+#header.fixed .inner .top_nav_box .top_mypage a svg circle {
+  stroke: #fff;
+}
+#header.fixed .inner .top_nav_box .top_mypage a:last-child svg path {
+  fill: #fff;
+}
+#header.fixed
+  .inner
+  .top_nav_box
+  .top_mypage
+  a.xans-layout-orderbasketcount
+  .count {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+#header .top_logo a img.logo-w {
+  display: none;
+}
+#header.fixed .top_logo a img.logo-w {
+  display: block;
+}
+#header.fixed .top_logo a img.logo-b {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  #header.fixed {
+    background: #000 !important;
+    max-width: 100% !important;
+    padding: 0 20px;
+    height: max-content;
+  }
+}
+
+/* 상단 메뉴 */
+#top_nav_box .menu ul {
+  display: flex;
+  align-items: center;
+}
+#top_nav_box .menu ul li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 모바일 상단 메뉴 숨기기 */
+@media (max-width: 1024px) {
+  #header .inner .top_nav_box .menu {
+    display: none;
+  }
+}
+
+/* 모바일 햄버거 */
+#header #top_nav_box .ham {
+  display: none;
+}
+
+#header #top_nav_box .ham span {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  display: block;
+}
+#header #top_nav_box .ham span:not(:last-child) {
+  margin-bottom: 7px;
+}
+
+@media (max-width: 1024px) {
+  #header #top_nav_box .ham {
+    display: block;
+  }
+  #header.fixed #top_nav_box .ham span {
+    background-color: #fff;
+  }
+  #header #top_nav_box .ham button {
+    width: 30px;
+    height: max-content;
+  }
+}
+
+/* hero section */
+#tabler-hero {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #FF5001;
+  transition: all .3s;
+}
+#tabler-hero .inner {
+  height: 100%;
+  position: relative;
+}
+#tabler-hero .bg-txt {
+  width: calc(100% - 100px);
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+#tabler-hero .bg-txt img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  #tabler-hero .bg-txt {
+    width: calc(100% - 40px);
+  }
+}
+
+#tabler-hero .hero-prds {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+#tabler-hero .hero-prds .prds-img {
+  width: 800px;
+  height: auto;
+  position: relative;
+}
+#tabler-hero .hero-prds .prds-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#tabler-hero .hero-prds .prds-txt {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+#tabler-hero .hero-prds .prds-txt .prds-name {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 30px 0;
+  display: inline-block;
+}
+#tabler-hero .hero-prds .prds-txt .prds-more a {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+#tabler-hero .hero-prds .prds-txt .prds-more a:hover {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+#tabler-hero .hero-shadow {
+  width: 100vw;
+  height: 80vh;
+  position: absolute;
+  bottom: -22%;
+  left: 0;
+  border-radius: 50%;
+  z-index: 1;
+  filter: blur(15px);
+}
+#tabler-hero .hero-shadow .green {
+  background: #e24500;
+}
+#tabler-hero .hero-prds li:not(:first-child) {
+  display: none;
+}
+
+#tabler-hero .hero-tab {
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+  background: #fff;
+  border: 1px solid #000;
+  padding: 16px 10px 0;
+  border-radius: 30px;
+  z-index: 9;
+}
+#tabler-hero .hero-tab ul li span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 16px;
+}
+#tabler-hero .hero-tab ul li span.green {
+  background: #63614C;
+  border: 1px solid #000;
+}
+#tabler-hero .hero-tab ul li span.beige {
+  background: #978059;
+}
+#tabler-hero .hero-tab ul li span.khaki {
+  background: #696B6F;
+}
+#tabler-hero .hero-tab ul li span.gray {
+  background: #326E60;
 }
