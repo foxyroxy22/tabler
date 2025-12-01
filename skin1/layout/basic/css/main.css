@@ -1176,12 +1176,14 @@ header {
 }
 
 /* hero section */
+/* ============================================================= */
+/* --- Hero Section (최종) --- */
 #tabler-hero {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #FF5001;
-  transition: all .3s;
+  background-color: #ff5001;
+  transition: background-color 0.4s ease-in-out;
 }
 #tabler-hero .inner {
   height: 100%;
@@ -1194,11 +1196,28 @@ header {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  overflow: hidden;
+  display: flex;
+    flex-direction: column; 
+    align-items: center;
 }
 #tabler-hero .bg-txt img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  position: relative; 
+    display: block;
+    
+    /* 초기 상태: 아래로 100% 이동, 투명도 0 */
+    opacity: 0;
+    transform: translateY(100%);
+    
+    /* 애니메이션 속성 정의 */
+    transition: opacity 0.8s, transform 0.8s ease-out;
+}
+#tabler-hero .bg-txt img.show-up {
+    opacity: 1;
+    transform: translateY(0); /* 제자리로 이동 */
 }
 
 @media (max-width: 1024px) {
@@ -1209,15 +1228,52 @@ header {
 
 #tabler-hero .hero-prds {
   position: absolute;
-  bottom: 80px;
+  top: 30%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 2;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
 }
+#tabler-hero .hero-prds ul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 제품 리스트 아이템 (공통: li) */
+#tabler-hero .hero-prds ul li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(100vw, 50vh) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s; 
+}
+
+/* 1. 현재 중앙에 활성화된 상태 (ACTIVE) */
+#tabler-hero .hero-prds ul li.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 80px) scale(1);
+}
+
+/* 2. 중앙에서 왼쪽 하단으로 나가는 상태 (OUT_LEFT) */
+#tabler-hero .hero-prds ul li.out-left {
+  pointer-events: none;
+}
+
+/* 이미지 컨테이너 (.prds-img) */
 #tabler-hero .hero-prds .prds-img {
   width: 800px;
+  max-width: 100%;
   height: auto;
   position: relative;
+  margin: 0 auto;
+  transition: transform 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+  transform: translate(0, 0) scale(1);
 }
 #tabler-hero .hero-prds .prds-img img {
   width: 100%;
@@ -1225,11 +1281,33 @@ header {
   object-fit: contain;
 }
 
+/* Active 상태의 이미지 (중앙 위치) */
+#tabler-hero .hero-prds ul li.active .prds-img {
+  transform: translate(0, 0) scale(1);
+}
+
+/* 나가는 이미지 (왼쪽 하단 궤적) */
+#tabler-hero .hero-prds ul li.out-left .prds-img {
+  transform: translate(-150vw, 50vh) scale(0.8);
+}
+
+/* 텍스트 컨테이너 (.prds-txt) */
 #tabler-hero .hero-prds .prds-txt {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
+  position: absolute;
+  bottom: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
+#tabler-hero .hero-prds ul li.active .prds-txt {
+  opacity: 1;
+}
+
 #tabler-hero .hero-prds .prds-txt .prds-name {
   font-size: 30px;
   font-weight: bold;
@@ -1251,6 +1329,7 @@ header {
   font-weight: bold;
 }
 
+/* --- Shadow & Tab --- */
 #tabler-hero .hero-shadow {
   width: 100vw;
   height: 80vh;
@@ -1261,13 +1340,9 @@ header {
   z-index: 1;
   filter: blur(15px);
 }
-#tabler-hero .hero-shadow .green {
-  background: #e24500;
-}
 #tabler-hero .hero-prds li:not(:first-child) {
   display: none;
 }
-
 #tabler-hero .hero-tab {
   position: absolute;
   bottom: 100px;
@@ -1284,17 +1359,18 @@ header {
   border-radius: 50%;
   display: block;
   margin-bottom: 16px;
+  cursor: pointer;
 }
 #tabler-hero .hero-tab ul li span.green {
-  background: #63614C;
+  background: #326E60;
   border: 1px solid #000;
 }
 #tabler-hero .hero-tab ul li span.beige {
   background: #978059;
 }
 #tabler-hero .hero-tab ul li span.khaki {
-  background: #696B6F;
+  background: #63614C;
 }
 #tabler-hero .hero-tab ul li span.gray {
-  background: #326E60;
+  background: #696B6F;
 }

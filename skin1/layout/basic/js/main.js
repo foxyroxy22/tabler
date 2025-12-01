@@ -165,43 +165,183 @@ jQuery(document).ready(function () {
   });
 
   //custom js
-  // 초기 상태 설정
-  $(".hero-prds ul li").hide().eq(0).show();
-  $(".hero-shadow li").hide().eq(0).fadeIn();
-  $(".hero-tab ul li").eq(0).find("span").css("border", "1px solid #000");
+  // 변수 설정
+  var $productItems = $(".hero-prds ul li");
+  var $shadowItems = $(".hero-shadow li");
+  var $tabButtons = $(".hero-tab ul li");
+  var bgColors = ["#ff5001", "#00A0EA", "#E70012", "#FFD202"];
+  var $tablerHero = $("#tabler-hero");
+
+  // 애니메이션 시간 설정
+  var ANIMATION_DURATION = 1500;
+  var cleanupTimer = null; // 정리 타이머 저장
+
+  // 1. 초기 제품 상태 설정 - 모든 제품 명시적 초기화
+  $productItems.each(function () {
+    $(this).css({
+      display: "none",
+      opacity: 0,
+      transform: "translate(100vw, 50vh) scale(0.8)",
+    });
+    $(this).find(".prds-img").css({
+      transform: "translate(0, 0) scale(1)",
+    });
+    $(this).find(".prds-txt").css("opacity", 0);
+  });
+
+  // 첫 번째 제품만 활성화
+  $productItems
+    .eq(0)
+    .css({
+      display: "block",
+      opacity: 1,
+      transform: "translate(-50%, 80px) scale(1)",
+    })
+    .addClass("active");
+
+  $productItems.eq(0).find(".prds-txt").css("opacity", 1);
+  $shadowItems.hide().eq(0).fadeIn();
+  $tabButtons.eq(0).find("span").css("border", "1px solid #000");
 
   // 섀도우 배경색 설정
-  $(".hero-shadow li").eq(1).css("background", "#0084C0"); // beige
-  $(".hero-shadow li").eq(2).css("background", "#C90010"); // khaki
-  $(".hero-shadow li").eq(3).css("background", "#E5BD02"); // gray
+  $shadowItems.eq(0).css("background", "#E24500");
+  $shadowItems.eq(1).css("background", "#0084C0");
+  $shadowItems.eq(2).css("background", "#C90010");
+  $shadowItems.eq(3).css("background", "#E5BD02");
 
   // 탭 클릭 이벤트
-  $(".hero-tab ul li").click(function () {
-    var index = $(this).index();
-    var $currentProduct = $(".hero-prds ul li:visible");
-    var $nextProduct = $(".hero-prds ul li").eq(index);
+  $tabButtons.click(function () {
+    var $this = $(this);
+    var index = $this.index();
+    var $currentProduct = $productItems.filter(".active");
+    var $nextProduct = $productItems.eq(index);
 
-    if ($currentProduct.index() === index) return; // 같은 탭 클릭 시 무시
+    // 1. 같은 탭 클릭 시 무시
+    if ($currentProduct.is($nextProduct)) return;
 
-    // 모든 탭 버튼 border 제거
-    $(".hero-tab ul li span").css("border", "none");
+    // ⭐ 2. 이전 정리 타이머가 있으면 취소하고 즉시 정리
+    if (cleanupTimer) {
+      clearTimeout(cleanupTimer);
+      // 모든 out-left 요소 즉시 정리
+      $productItems.filter(".out-left").each(function () {
+        $(this).removeClass("out-left active").hide();
+        $(this).attr("style", "");
+        $(this).css({
+          display: "none",
+          opacity: "0",
+          transform: "translate(100vw, 50vh) scale(0.8)",
+        });
+        $(this).find(".prds-img").attr("style", "");
+        $(this).find(".prds-img").css({
+          transform: "translate(0, 0) scale(1)",
+        });
+      });
+    }
 
-    // 클릭된 탭 버튼 활성화
-    $(this).find("span").css("border", "1px solid #000");
+    // --- 비주얼 전환 로직 ---
+    $tabButtons.find("span").css("border", "none");
+    $this.find("span").css("border", "1px solid #000");
+    $tablerHero.css("background-color", bgColors[index]);
 
-    // 배경색 변경
-    var bgColors = ["#ff5001", "#00A0EA", "#E70012", "#FFD202"];
-    $("#tabler-hero").css("background-color", bgColors[index]);
-
-    // 현재 제품 텍스트 페이드아웃
-    $currentProduct.find(".prds-txt").fadeOut(300);
-
-    // 다음 제품 텍스트 페이드인
-    $nextProduct.find(".prds-txt").delay(400).fadeIn(300);
-
-    // 섀도우 배경색 전환
-    $(".hero-shadow li").fadeOut(300, function () {
-      $(".hero-shadow li").eq(index).fadeIn(400);
+    // 섀도우 전환
+    $shadowItems.stop(true, false).fadeOut(300, function () {
+      $shadowItems.eq(index).fadeIn(400);
     });
+
+    // 3. --- OUT 애니메이션 (기존 제품) - requestAnimationFrame으로 즉시 시작 ---
+    $currentProduct.removeClass("active");
+    $currentProduct.find(".prds-txt").css("opacity", 0);
+
+    // ⭐ transition을 none으로 초기화
+    $currentProduct.find(".prds-img").css({
+      transition: "none",
+      transform: "translate(0, 0) scale(1)",
+    });
+
+    // ⭐ requestAnimationFrame으로 브라우저 다음 프레임에 실행
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        $currentProduct.find(".prds-img").css({
+          transition: "transform 0.9s cubic-bezier(0.65, 0, 0.35, 1)",
+          transform: "translate(-150vw, 50vh) scale(0.8)",
+        });
+      });
+    });
+
+    $currentProduct.addClass("out-left");
+
+    // 4. --- IN 애니메이션 (새 제품) ---
+
+    // A. 새 li 컨테이너 초기 위치 설정
+    $nextProduct.css({
+      display: "block",
+      transition: "none",
+      opacity: 0,
+      transform: "translate(100vw, 50vh) scale(0.8)",
+    });
+
+    // B. 새 이미지의 초기 상태 설정
+    $nextProduct.find(".prds-img").css({
+      transition: "none",
+      transform: "translate(0, 0) scale(1)",
+    });
+
+    // C. 텍스트 초기 상태 설정
+    $nextProduct.find(".prds-txt").css("opacity", 0);
+
+    // D. requestAnimationFrame으로 IN 애니메이션도 동기화
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        $nextProduct.css({
+          transition: "opacity 0.4s, transform 0.4s",
+          opacity: 1,
+          transform: "translate(-50%, 80px) scale(1)",
+        });
+
+        $nextProduct
+          .find(".prds-img")
+          .css("transition", "transform 1.5s cubic-bezier(0.65, 0, 0.35, 1)");
+      });
+    });
+
+    $nextProduct.addClass("active");
+
+    // E. 텍스트 Fade In
+    setTimeout(function () {
+      $nextProduct.find(".prds-txt").css("opacity", 1);
+    }, 400);
+
+    // 5. --- 애니메이션 완료 후 정리 ---
+    cleanupTimer = setTimeout(function () {
+      // 나간 요소 완전 초기화
+      $currentProduct.removeClass("out-left active").hide();
+
+      $currentProduct.attr("style", "");
+      $currentProduct.css({
+        display: "none",
+        opacity: "0",
+        transform: "translate(100vw, 50vh) scale(0.8)",
+      });
+
+      $currentProduct.find(".prds-img").attr("style", "");
+      $currentProduct.find(".prds-img").css({
+        transform: "translate(0, 0) scale(1)",
+      });
+
+      cleanupTimer = null;
+    }, ANIMATION_DURATION + 100);
+  });
+
+  /* --- BG Text Wipe Up Animation --- */
+  var $bgTxtImgs = $(".bg-txt img");
+
+  // 텍스트 이미지 Wipe Up 애니메이션 실행
+  $bgTxtImgs.each(function (index) {
+    // 텍스트 순서대로 200ms 간격으로 애니메이션 시작
+    // bind(this) 대신 화살표 함수와 $()를 사용하여 this 참조 오류를 방지합니다.
+    var $img = $(this);
+    setTimeout(function () {
+      $img.addClass("show-up");
+    }, index * 350 + 0);
   });
 });
