@@ -32,7 +32,7 @@ body {
 }
 .cboth {
   clear: both;
-  *zoom: 1;
+  zoom: 1;
 }
 .cboth:after {
   content: " ";
@@ -189,7 +189,7 @@ a:hover {
 }
 @media (max-width: 1024px) {
   #header {
-    max-width: calc(100vw - 60px);
+    max-width: calc(100vw - 40px);
   }
 }
 
@@ -1677,4 +1677,99 @@ a:hover {
 #modalContainer #modalContent {
   width: 100%;
   height: 100%;
+}
+
+/* custom css */
+#header.fixed {
+  background: #000 !important;
+  max-width: 100% !important;
+  padding: 0 45px 0 30px;
+}
+#header.fixed .menu li a {
+  color: #fff;
+}
+
+#header.fixed .inner .top_nav_box .top_mypage a:first-child svg path,
+#header.fixed .inner .top_nav_box .top_mypage a:nth-child(2) svg path,
+#header.fixed .inner .top_nav_box .top_mypage a svg circle {
+  stroke: #fff;
+}
+#header.fixed .inner .top_nav_box .top_mypage a:last-child svg path {
+  fill: #fff;
+}
+#header.fixed
+  .inner
+  .top_nav_box
+  .top_mypage
+  a.xans-layout-orderbasketcount
+  .count {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+#header .top_logo a img.logo-w {
+  display: none;
+}
+#header.fixed .top_logo a img.logo-w {
+  display: block;
+}
+#header.fixed .top_logo a img.logo-b {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  #header.fixed {
+    background: #000 !important;
+    max-width: 100% !important;
+    padding: 0 20px;
+    height: max-content;
+  }
+}
+
+/* 상단 메뉴 */
+#top_nav_box .menu ul {
+  display: flex;
+  align-items: center;
+}
+#top_nav_box .menu ul li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 모바일 상단 메뉴 숨기기 */
+@media (max-width: 1024px) {
+  #header .inner .top_nav_box .menu {
+    display: none;
+  }
+}
+
+/* 모바일 햄버거 */
+#header #top_nav_box .ham {
+  display: none;
+}
+
+#header #top_nav_box .ham span {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  display: block;
+}
+#header #top_nav_box .ham span:not(:last-child) {
+  margin-bottom: 7px;
+}
+
+@media (max-width: 1024px) {
+  #header #top_nav_box .ham {
+    display: block;
+  }
+  #header.fixed #top_nav_box .ham span {
+    background-color: #fff;
+  }
+  #header #top_nav_box .ham button {
+    width: 30px;
+    height: max-content;
+  }
 }

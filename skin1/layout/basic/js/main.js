@@ -201,7 +201,7 @@ jQuery(document).ready(function () {
 
   $productItems.eq(0).find(".prds-txt").css("opacity", 1);
   $shadowItems.hide().eq(0).fadeIn();
-  $tabButtons.eq(0).find("span").css("border", "1px solid #000");
+  $tabButtons.eq(0).find("span").css("border", "2px solid #000");
 
   // 섀도우 배경색 설정
   $shadowItems.eq(0).css("background", "#E24500");
@@ -240,7 +240,7 @@ jQuery(document).ready(function () {
 
     // --- 비주얼 전환 로직 ---
     $tabButtons.find("span").css("border", "none");
-    $this.find("span").css("border", "1px solid #000");
+    $this.find("span").css("border", "2px solid #000");
     $tablerHero.css("background-color", bgColors[index]);
 
     // 섀도우 전환

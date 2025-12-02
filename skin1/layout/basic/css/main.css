@@ -1081,103 +1081,8 @@ header {
 
 /* ============================================================= */
 /* custom.css */
-#header.fixed {
-  background: #000 !important;
-  max-width: 100% !important;
-  padding: 0 45px 0 30px;
-}
-#header.fixed .menu li a {
-  color: #fff;
-}
-
-#header.fixed .inner .top_nav_box .top_mypage a:first-child svg path,
-#header.fixed .inner .top_nav_box .top_mypage a:nth-child(2) svg path,
-#header.fixed .inner .top_nav_box .top_mypage a svg circle {
-  stroke: #fff;
-}
-#header.fixed .inner .top_nav_box .top_mypage a:last-child svg path {
-  fill: #fff;
-}
-#header.fixed
-  .inner
-  .top_nav_box
-  .top_mypage
-  a.xans-layout-orderbasketcount
-  .count {
-  background: #fff;
-  color: #000;
-  font-weight: bold;
-}
-
-#header .top_logo a img.logo-w {
-  display: none;
-}
-#header.fixed .top_logo a img.logo-w {
-  display: block;
-}
-#header.fixed .top_logo a img.logo-b {
-  display: none;
-}
-
-@media (max-width: 1024px) {
-  #header.fixed {
-    background: #000 !important;
-    max-width: 100% !important;
-    padding: 0 20px;
-    height: max-content;
-  }
-}
-
-/* 상단 메뉴 */
-#top_nav_box .menu ul {
-  display: flex;
-  align-items: center;
-}
-#top_nav_box .menu ul li a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* 모바일 상단 메뉴 숨기기 */
-@media (max-width: 1024px) {
-  #header .inner .top_nav_box .menu {
-    display: none;
-  }
-}
-
-/* 모바일 햄버거 */
-#header #top_nav_box .ham {
-  display: none;
-}
-
-#header #top_nav_box .ham span {
-  width: 100%;
-  height: 2px;
-  background-color: #000;
-  display: block;
-}
-#header #top_nav_box .ham span:not(:last-child) {
-  margin-bottom: 7px;
-}
-
-@media (max-width: 1024px) {
-  #header #top_nav_box .ham {
-    display: block;
-  }
-  #header.fixed #top_nav_box .ham span {
-    background-color: #fff;
-  }
-  #header #top_nav_box .ham button {
-    width: 30px;
-    height: max-content;
-  }
-}
-
-/* hero section */
 /* ============================================================= */
-/* --- Hero Section (최종) --- */
+/* hero section */
 #tabler-hero {
   width: 100%;
   height: 100vh;
@@ -1198,26 +1103,25 @@ header {
   z-index: 1;
   overflow: hidden;
   display: flex;
-    flex-direction: column; 
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 #tabler-hero .bg-txt img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  position: relative; 
-    display: block;
-    
-    /* 초기 상태: 아래로 100% 이동, 투명도 0 */
-    opacity: 0;
-    transform: translateY(100%);
-    
-    /* 애니메이션 속성 정의 */
-    transition: opacity 0.8s, transform 0.8s ease-out;
+  position: relative;
+  display: block;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.8s, transform 0.8s ease-out;
 }
+
 #tabler-hero .bg-txt img.show-up {
-    opacity: 1;
-    transform: translateY(0); /* 제자리로 이동 */
+  opacity: 1;
+  transform: translateY(0); /* 제자리로 이동 */
 }
 
 @media (max-width: 1024px) {
@@ -1250,7 +1154,7 @@ header {
   transform: translate(100vw, 50vh) scale(0.8);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s, transform 0.4s; 
+  transition: opacity 0.4s, transform 0.4s;
 }
 
 /* 1. 현재 중앙에 활성화된 상태 (ACTIVE) */
@@ -1311,7 +1215,7 @@ header {
 #tabler-hero .hero-prds .prds-txt .prds-name {
   font-size: 30px;
   font-weight: bold;
-  margin: 30px 0;
+  margin: 20px 0;
   display: inline-block;
 }
 #tabler-hero .hero-prds .prds-txt .prds-more a {
@@ -1348,29 +1252,154 @@ header {
   bottom: 100px;
   right: 50px;
   background: #fff;
-  border: 1px solid #000;
-  padding: 16px 10px 0;
+  border: 2px solid #000;
+  padding: 16px 10px;
   border-radius: 30px;
   z-index: 9;
+}
+#tabler-hero .hero-tab ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 #tabler-hero .hero-tab ul li span {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   display: block;
-  margin-bottom: 16px;
   cursor: pointer;
 }
 #tabler-hero .hero-tab ul li span.green {
-  background: #326E60;
-  border: 1px solid #000;
+  background: #326e60;
 }
 #tabler-hero .hero-tab ul li span.beige {
   background: #978059;
 }
 #tabler-hero .hero-tab ul li span.khaki {
-  background: #63614C;
+  background: #63614c;
 }
 #tabler-hero .hero-tab ul li span.gray {
-  background: #696B6F;
+  background: #696b6f;
+}
+
+#tabler-hero .click-msg {
+  position: absolute;
+  bottom: 21vh;
+  right: 35px;
+  z-index: 9;
+  animation: bounce 2s infinite ease-in-out;
+}
+#tabler-hero .click-msg .mobile {
+  display: none;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px); /* 30px 위로 튕김 */
+  }
+  60% {
+    transform: translateY(-10px); /* 15px 위로 튕겨서 멈춤 */
+  }
+}
+
+@media (max-width: 750px) {
+  #tabler-hero {
+    height: 90vh;
+  }
+  #tabler-hero .bg-txt {
+    top: 75px;
+  }
+
+  #tabler-hero .hero-prds ul li {
+    top: 55%;
+  }
+  #tabler-hero .hero-prds .prds-img {
+    width: 300px;
+  }
+
+  #tabler-hero .hero-prds .prds-txt {
+    bottom: -60px;
+  }
+  #tabler-hero .hero-prds .prds-txt .prds-name {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  #tabler-hero .hero-prds .prds-txt .prds-more a {
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+
+  #tabler-hero .hero-tab {
+    bottom: 58%;
+    right: auto;
+    left: 50%;
+    transform: translate(-50%);
+    border: 1px solid #000;
+    padding: 5px 11px;
+    background: #000;
+  }
+  #tabler-hero .hero-tab ul li span {
+    width: 18px;
+    height: 18px;
+  }
+  #tabler-hero .hero-tab ul {
+    flex-direction: row;
+    gap: 7px;
+  }
+
+  #tabler-hero .click-msg {
+    bottom: 55vh;
+    right: auto;
+    left: 50vw;
+    transform: translateX(-50%);
+    width: 95px;
+    z-index: 9;
+    animation: 0;
+  }
+  #tabler-hero .click-msg .desktop {
+    display: none;
+  }
+  #tabler-hero .click-msg .mobile {
+    display: block;
+  }
+}
+
+/* #find */
+#find {
+  width: 100%;
+  height: 70vh;
+  background: url("//ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/find-bg.png")
+    no-repeat center / cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+#find .txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+#find .txt h3 {
+  font-size: 100px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+#find .txt .arrow {
+  margin: 50px 0;
+}
+#find .txt p {
+  font-size: 20px;
 }
