@@ -1,0 +1,95 @@
+<footer id="tabler-footer">
+  <div class="inner">
+    <!-- 해시태그 이미지 -->
+    <div class="footer-hashtags">
+      <img
+        src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/footer_hashtag.svg"
+        alt="#fun #easy #now"
+      />
+    </div>
+
+    <!-- info 3단 -->
+    <div class="footer-info">
+      <!-- 좌: 네비 -->
+      <nav class="footer-nav">
+        <a href="https://tabler-tabler.com/category/전체/53/">SHOP</a>
+        <a href="#">ABOUT</a>
+        <a href="#">HOW TO USE</a>
+        <a href="#">VIBE TEST</a>
+      </nav>
+
+      <!-- 중앙: 로고 + 태그라인 + 패밀리사이트 + 카피라이트 -->
+      <div class="footer-main">
+        <div class="footer-logo-wrap">
+          <a href="/index.html">
+            <img
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/logo_b.png"
+              alt="tabler"
+              class="footer-logo"
+            />
+          </a>
+          <p class="footer-tagline">FREEZE THE MOMENT</p>
+        </div>
+        <div class="footer-family">
+          <div class="family-shadow"></div>
+          <div
+            class="family-btn"
+            onclick="this.parentElement.classList.toggle('open')"
+          >
+            <span>FAMILY SITE</span>
+            <svg
+              width="12"
+              height="8"
+              viewBox="0 0 12 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L6 6L11 1"
+                stroke="#101010"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <ul class="family-dropdown">
+            <li><a href="#" target="_blank">takyeong c&amp;co</a></li>
+            <li><a href="#" target="_blank">YOJM</a></li>
+            <li><a href="#" target="_blank">요즘 곡간</a></li>
+          </ul>
+        </div>
+        <p class="footer-copy">ⓒ 테블러 ALL RIGHTS RESERVED.</p>
+      </div>
+
+      <!-- 우: 사업자 정보 -->
+      <div class="footer-fundamentals">
+        <ul class="footer-biz">
+          <li>법인명(상호) 테블러 | 대표자(성명) 김태경</li>
+          <li>주소 부산 강서구 명지오션시티1로 173, 청산오션타워 310호</li>
+          <li>사업자등록번호 000-00-00000</li>
+          <li>통신판매업신고: 제0000-서울OO-0000호</li>
+          <li>CS: help@tabler.com / 00-000-0000</li>
+        </ul>
+        <p class="footer-safe">
+          고객님의 안전거래를 위해 결제 시 저희 쇼핑몰에서 가입한 PG사의<br />
+          구매안전서비스를 이용하실 수 있습니다.
+        </p>
+        <div class="footer-tnc">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용 안내</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".footer-family")) {
+      document.querySelectorAll(".footer-family.open").forEach(function (el) {
+        el.classList.remove("open");
+      });
+    }
+  });
+</script>

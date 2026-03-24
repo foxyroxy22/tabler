@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/* =========================================
+   1. Point Font (Minecraft)
+   ========================================= */
+@font-face {
+  font-family: "Minecraft";
+  src: url("https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/font/Minecraft.woff2")
+    format("woff2"); /* 실제 FTP 경로로 수정 */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================================
+   2. Main Font (Pretendard) - 사용하는 굵기만 로드
+   ========================================= */
+
+/* Regular (400) */
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* SemiBold (600) */
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}

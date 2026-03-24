@@ -1,0 +1,358 @@
+.xans-product-normalmenu .function {
+  overflow: hidden;
+  text-align: right;
+  line-height: 38px;
+}
+.xans-product-normalmenu .function .btnCompare {
+  display: inline-block;
+  padding: 0 12px;
+}
+.xans-product-normalmenu .function .btnCompare:hover {
+  text-decoration: none;
+}
+.xans-product-normalmenu .prdCount {
+  float: left;
+  color: #7d7d7d;
+}
+.xans-product-normalmenu .prdCount strong {
+  margin-left: 8px;
+}
+.xans-product-normalmenu fieldset {
+  margin: 20px 0 0;
+  padding: 10px 16px;
+  text-align: right;
+  background: #fbf9fa;
+}
+
+/********************* Mobile *********************/
+@media all and (max-width: 767px) {
+  .xans-product-normalmenu {
+    padding: 20px 16px 0;
+  }
+  #shopList .product_area {
+    margin: 0 16px;
+  }
+}
+/********************* Mobile / Tablet *********************/
+@media all and (max-width: 1024px) {
+  .xans-product-normalmenu {
+    margin: 40px 0 0;
+  }
+}
+
+/********************* Tablet *********************/
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .xans-product-normalmenu {
+    padding: 20px 24px 0;
+  }
+  #shopList .product_area {
+    margin: 0 24px;
+  }
+}
+
+/********************* PC *********************/
+@media all and (min-width: 1025px) {
+  .xans-product-normalmenu {
+    margin: 50px 0 0;
+    padding: 40px 0 0;
+  }
+}
+
+/** 오우이_style 210910 **/
+
+/* 목록페이지 */
+.normalpackage_box {
+  margin-bottom: 120px;
+}
+.xans-product-normalmenu {
+  border-top: 0;
+  padding: 0 0 20px;
+  margin: 0;
+}
+#shopList {
+  padding: 0;
+  margin: 0 auto;
+}
+.product_top_image {
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+}
+.listpage_title {
+  margin: 0 0 40px 0;
+  font-size: 24px;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+.listpage_title span {
+  display: block;
+  font-size: 16px;
+  color: #9a9a9a;
+  font-weight: 400;
+}
+.listpage_title.ez-align-left {
+  text-align: left;
+}
+.listpage_title.ez-align-center {
+  text-align: center;
+}
+.listpage_title.ez-align-right {
+  text-align: right;
+}
+#shoppQbtn {
+  margin-top: 40px;
+}
+.xans-product-headcategory.titleArea.section {
+  margin: 0 auto;
+  padding: 45px 0 40px;
+}
+
+/* 상품분류 추천상품 */
+.xans-product-listrecommend {
+  padding: 0;
+  margin: 0 auto !important;
+}
+.xans-product-listrecommend .prdList .thumbnail .badge {
+  display: flex !important;
+}
+.xans-product-listrecommend .prdList .thumbnail .likeButton {
+  display: none !important;
+}
+
+/* 상품분류 신상품 */
+.xans-product-listnew {
+  padding: 0;
+  margin: 0 auto !important;
+}
+.xans-product-listnew .prdList .thumbnail .badge {
+  display: flex !important;
+}
+.xans-product-listnew .prdList .thumbnail .likeButton {
+  display: none !important;
+}
+
+@media all and (max-width: 1024px) {
+  /* 목록페이지 */
+  .normalpackage_box {
+    margin-bottom: 50px;
+  }
+  #shopList {
+    width: 100%;
+  }
+  .xans-product-normalmenu {
+    padding: 0;
+    border: 0;
+  }
+  .product_top_image {
+    width: 100%;
+    padding: 10px 0;
+  }
+  .listpage_title {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  .listpage_title span {
+    font-size: 11px;
+  }
+  .xans-product-headcategory.titleArea.section {
+    border-bottom: 1px solid #e8e8e8;
+    margin: 0 0 20px;
+    padding: 20px 0;
+  }
+
+  /* 상품분류 추천상품 */
+  .xans-product-listrecommend {
+    width: 100%;
+    padding: 0 0 50px;
+  }
+
+  /* 상품분류 신상품 */
+  .xans-product-listnew {
+    width: 100%;
+    padding: 0 0 50px;
+  }
+}
+
+/* =============================================
+   SHOP PAGE — Product Grid & Card
+   ↳ Edit here for all product card styles
+   No !important needed — conflicting rules removed from ec-base-product.css
+   ============================================= */
+
+/* Normalmenu bar — add horizontal breathing room */
+.xans-product-normalmenu {
+  padding: 0 var(--margin);
+}
+
+/* Sort select — styled to match footer FAMILY SITE pill */
+.xans-product-normalmenu .sort select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23101010' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  border: 1px solid var(--text-color);
+  border-radius: 999px;
+  padding: 8px 40px 8px 24px;
+  font-family: var(--font-main);
+  font-size: var(--fs-p6);
+  font-weight: var(--fw-sb);
+  color: var(--text-color);
+  cursor: pointer;
+  outline: none;
+}
+
+/* 3-column seamless grid
+   Border strategy: grid container owns top + left,
+   each cell owns right + bottom → zero overlapping lines */
+.ec-base-product .prdList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  border-top: 1px solid var(--text-color);
+  border-left: 1px solid var(--text-color);
+}
+
+.ec-base-product .prdList > li {
+  display: block;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+}
+
+/* Card — position:relative so description overlays */
+.ec-base-product .prdList .prdList__item {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.ec-base-product .prdList .thumbnail {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+/* Image wrap — 1:1 square */
+.ec-base-product .prdList .thumbnail a.img-wrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: #f5f0eb;
+  line-height: 0;
+}
+
+/* Both images fill the square — contain, no zoom */
+.ec-base-product .prdList .thumbnail a.img-wrap .img-default,
+.ec-base-product .prdList .thumbnail a.img-wrap .img-hover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.35s ease;
+}
+
+/* Hover crossfade */
+.ec-base-product .prdList .thumbnail a.img-wrap .img-hover {
+  opacity: 0;
+}
+.ec-base-product .prdList .thumbnail a.img-wrap:hover .img-default {
+  opacity: 0;
+}
+.ec-base-product .prdList .thumbnail a.img-wrap:hover .img-hover {
+  opacity: 1;
+}
+
+/* Hide wish / cart / add buttons */
+.ec-base-product .prdList .icon__box {
+  display: none;
+}
+
+/* Description — pinned 30px from top, centered horizontally */
+.ec-base-product .prdList .description {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 30px 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background: transparent;
+  pointer-events: none;
+  z-index: 2;
+  white-space: normal;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.ec-base-product .prdList .description .name {
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.ec-base-product .prdList .description .name a {
+  font-family: var(--font-main);
+  font-size: var(--fs-p6);
+  font-weight: var(--fw-sb);
+  color: #1a1a1a;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  pointer-events: auto;
+}
+
+.ec-base-product .prdList .description .name .title {
+  display: none;
+}
+
+/* Price */
+.ec-base-product .prdList .description .spec {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ec-base-product .prdList .description .spec > li {
+  font-family: var(--font-main);
+  font-size: var(--fs-p6);
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.ec-base-product .prdList .description .spec > li .title {
+  display: none;
+}
+
+.ec-base-product .prdList .description .ec-base-help,
+.ec-base-product .prdList .description .icon {
+  display: none;
+}
+
+/* Tablet: 2 columns */
+@media all and (max-width: 1024px) {
+  .ec-base-product .prdList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media all and (max-width: 767px) {
+  .ec-base-product .prdList {
+    grid-template-columns: 1fr;
+  }
+}
