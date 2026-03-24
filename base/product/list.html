@@ -310,6 +310,7 @@
   <!-- //product_normalpackage -->
 </div>
 <script>
+  /* Hover image mapper */
   (function () {
     var BASE =
       "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_";
@@ -333,5 +334,97 @@
       var hoverImg = item.querySelector(".img-hover");
       if (hoverImg) hoverImg.src = BASE + colorMap[color] + "_hover.jpg";
     });
+  })();
+
+  /* Sort — custom dropdown matching footer FAMILY SITE */
+  (function () {
+    var sel = document.getElementById("selArray");
+    if (!sel) return;
+
+    var sortDiv = sel.parentNode;
+
+    /* Build wrapper */
+    var wrap = document.createElement("div");
+    wrap.className = "sort-custom";
+
+    var shadow = document.createElement("div");
+    shadow.className = "sort-shadow";
+
+    var btn = document.createElement("div");
+    btn.className = "sort-btn";
+    btn.setAttribute("tabindex", "0");
+    btn.setAttribute("role", "button");
+    btn.setAttribute("aria-haspopup", "listbox");
+    btn.setAttribute("aria-expanded", "false");
+
+    var label = document.createElement("span");
+    label.className = "sort-label";
+    var currentOpt = sel.options[sel.selectedIndex];
+    label.textContent = currentOpt ? currentOpt.text : "- 정렬방식 -";
+
+    var svgNS = "http://www.w3.org/2000/svg";
+    var chevron = document.createElementNS(svgNS, "svg");
+    chevron.setAttribute("width", "12");
+    chevron.setAttribute("height", "8");
+    chevron.setAttribute("viewBox", "0 0 12 8");
+    chevron.setAttribute("fill", "none");
+    var path = document.createElementNS(svgNS, "path");
+    path.setAttribute("d", "M1 1L6 6L11 1");
+    path.setAttribute("stroke", "#101010");
+    path.setAttribute("stroke-width", "1.5");
+    path.setAttribute("stroke-linecap", "round");
+    chevron.appendChild(path);
+
+    btn.appendChild(label);
+    btn.appendChild(chevron);
+
+    var dropdown = document.createElement("ul");
+    dropdown.className = "sort-dropdown";
+    dropdown.setAttribute("role", "listbox");
+
+    Array.from(sel.options).forEach(function (opt) {
+      var li = document.createElement("li");
+      li.setAttribute("role", "option");
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = opt.text;
+      b.addEventListener("click", function () {
+        sel.value = opt.value;
+        label.textContent = opt.text;
+        wrap.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+        sel.dispatchEvent(new Event("change", { bubbles: true }));
+      });
+      li.appendChild(b);
+      dropdown.appendChild(li);
+    });
+
+    wrap.appendChild(shadow);
+    wrap.appendChild(btn);
+    wrap.appendChild(dropdown);
+
+    /* Toggle open/close */
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var isOpen = wrap.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+    });
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        var isOpen = wrap.classList.toggle("open");
+        btn.setAttribute("aria-expanded", String(isOpen));
+      }
+    });
+
+    /* Close on outside click */
+    document.addEventListener("click", function () {
+      wrap.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    });
+
+    /* Insert custom dropdown before native select, then hide native */
+    sortDiv.insertBefore(wrap, sel);
+    sel.style.display = "none";
   })();
 </script>
