@@ -78,7 +78,7 @@ body:has(.product_scrollx) #container {
   padding-right: 0;
 }
 #container #contents {
-  margin: 0 auto;
+  margin: 50px auto;
   float: none;
   padding: 0;
 }

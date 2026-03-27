@@ -777,13 +777,13 @@
 #review .col-a .card-img,
 #review .col-b .card-img {
   flex: 1;
-  min-height: 500px;
+  min-height: 700px;
 }
 
 /* 이미지 페어 wrapper */
 #review .d-img-pair {
   flex: 1;
-  min-height: 320px;
+  min-height: 520px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
