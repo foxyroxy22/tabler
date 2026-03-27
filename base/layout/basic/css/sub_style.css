@@ -2265,7 +2265,6 @@ div.ec-base-help ul {
 /* 페이지경로 */
 .path {
   margin: 0 auto;
-  padding: 20px 0 0 0;
 }
 
 /* 기획전 페이지 */
@@ -3214,11 +3213,6 @@ div.ec-base-help ul {
   .xans-project-list h3 span {
     position: absolute;
     top: -80px !important;
-  }
-
-  /* 서브페이지 타이틀 */
-  .titleArea h2 {
-    width: 85%;
   }
 
   .ec-base-layer[class*="regularDeliveryApply"] .ec-base-button [class^="btn"] {

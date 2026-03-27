@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(grep -E \"\\\\.\\(html|php|htm\\)$\")",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git -C \"C:\\\\Users\\\\25aaa\\\\Desktop\\\\자료\\\\tabler\\\\테블러 코드\\\\sample08\" worktree list)",
+      "Bash(git -C \"C:\\\\Users\\\\25aaa\\\\Desktop\\\\자료\\\\tabler\\\\테블러 코드\\\\sample08\" diff master claude/modest-hypatia)",
+      "Bash(git -C \"C:\\\\Users\\\\25aaa\\\\Desktop\\\\자료\\\\tabler\\\\테블러 코드\\\\sample08\\\\.claude\\\\worktrees\\\\modest-hypatia\" status)",
+      "Bash(git -C \"C:\\\\Users\\\\25aaa\\\\Desktop\\\\자료\\\\tabler\\\\테블러 코드\\\\sample08\\\\.claude\\\\worktrees\\\\modest-hypatia\" diff)"
     ]
   }
 }
