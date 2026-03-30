@@ -2254,6 +2254,9 @@ div.ec-base-help ul {
     no-repeat center center;
   background-size: 40px;
 }
+.ec-base-paginate.typeList > a:nth-child(3) {
+  transform: rotate(180deg);
+}
 .ec-base-paginate.typeList > a.first {
   background: url("https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prev_prev.png")
     no-repeat center center;
