@@ -2253,6 +2253,9 @@ div.ec-base-help ul {
   background: url("/SkinImg/img/btn_page_prev.png") no-repeat center center;
   background-size: 40px;
 }
+.ec-base-paginate.typeList > a:nth-child(3) {
+  transform: rotate(180deg);
+}
 .ec-base-paginate.typeList > a.first {
   background: url("/SkinImg/img/btn_page_first.png") no-repeat center center;
   background-size: 40px;
