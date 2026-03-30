@@ -77,6 +77,11 @@ body:has(.product_scrollx) #container {
   padding-left: 0;
   padding-right: 0;
 }
+/* About us (company.html) — full width, no container padding */
+body:has(.au-wrap) #container {
+  padding-left: 0;
+  padding-right: 0;
+}
 #container #contents {
   margin: 50px auto 100px;
   float: none;
