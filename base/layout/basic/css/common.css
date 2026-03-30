@@ -36,6 +36,7 @@ a:active { text-decoration:none; }
 #skipNavigation p a {position:absolute; left:0; top:0; display:block; overflow:hidden; width:1px; height:1px; margin-left:-1px; margin-bottom:-1px; text-align:center; color:#000; white-space:nowrap;}
 #skipNavigation p a:focus, #skipNavigation p a:hover, #skipNavigation p a:active {width:100%; height:auto; padding:10px 0; background:#c4122f; color:#fff; z-index:100;}
 
+
 .displaynone { display:none; }
 .dimmed { position:fixed; top:0; left:0; z-index:99; width:100%; height:100%; background:#fff; opacity:0.8; filter:alpha(opacity=80); }
 .blind { display: block; overflow: hidden; position: absolute; font-size: 1px; line-height: 0; color: transparent; text-indent: -150%; white-space: nowrap;}

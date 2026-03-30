@@ -184,18 +184,24 @@
   padding: 0 var(--margin);
 }
 
+/* Sort — fix .function clipping the dropdown */
+.xans-product-normalmenu .function {
+  overflow: visible;
+}
+
 /* Sort — custom dropdown matching footer FAMILY SITE */
-.xans-product-normalmenu .sort {
+/* Use #shopList prefix (ID = high specificity, always in DOM) */
+#shopList .sort {
   position: relative;
   display: inline-block;
 }
 
-.xans-product-normalmenu .sort-custom {
+#shopList .sort-custom {
   position: relative;
   display: inline-block;
 }
 
-.xans-product-normalmenu .sort-shadow {
+#shopList .sort-shadow {
   position: absolute;
   inset: 3px -3px -3px 3px;
   background: var(--text-color);
@@ -204,24 +210,24 @@
   transition: border-radius 0.2s;
 }
 
-.xans-product-normalmenu .sort-custom.open .sort-shadow {
+#shopList .sort-custom.open .sort-shadow {
   border-radius: 20px;
 }
 
-.xans-product-normalmenu .sort-btn {
+#shopList .sort-btn {
   position: relative;
   z-index: 1;
-  background: #fff;
-  border: 1px solid var(--text-color);
-  border-radius: 999px;
-  padding: 8px 24px;
-  font-family: var(--font-main);
-  font-size: var(--fs-p6);
-  font-weight: var(--fw-sb);
-  color: var(--text-color);
+  background: #fff !important;
+  border: 1px solid var(--text-color) !important;
+  border-radius: 999px !important;
+  padding: 8px 24px !important;
+  font-family: var(--font-main) !important;
+  font-size: var(--fs-p6) !important;
+  font-weight: var(--fw-sb) !important;
+  color: var(--text-color) !important;
   cursor: pointer;
   min-width: 160px;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -231,26 +237,26 @@
   user-select: none;
 }
 
-.xans-product-normalmenu .sort-custom.open .sort-btn {
+#shopList .sort-custom.open .sort-btn {
   border-radius: 20px 20px 0 0;
   border-bottom-color: transparent;
 }
 
-.xans-product-normalmenu .sort-btn svg {
+#shopList .sort-btn svg {
   transition: transform 0.2s;
   flex-shrink: 0;
 }
 
-.xans-product-normalmenu .sort-custom.open .sort-btn svg {
+#shopList .sort-custom.open .sort-btn svg {
   transform: rotate(180deg);
 }
 
-.xans-product-normalmenu .sort-dropdown {
+#shopList .sort-dropdown {
   display: none;
   position: absolute;
   right: 0;
   top: 100%;
-  z-index: 10;
+  z-index: 100;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -262,28 +268,25 @@
   min-width: 160px;
 }
 
-.xans-product-normalmenu .sort-custom.open .sort-dropdown {
+#shopList .sort-custom.open .sort-dropdown {
   display: block;
 }
 
-.xans-product-normalmenu .sort-dropdown li button {
-  display: block;
-  width: 100%;
-  padding: 8px 24px;
-  font-family: var(--font-main);
-  font-size: var(--fs-p6);
-  font-weight: var(--fw-sb);
-  color: var(--text-color);
-  text-align: center;
-  background: transparent;
-  border: none;
-  cursor: pointer;
+#shopList .sort-dropdown li a {
+  display: block !important;
+  padding: 8px 24px !important;
+  font-family: var(--font-main) !important;
+  font-size: var(--fs-p6) !important;
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  text-align: center !important;
   transition: background 0.15s;
-  white-space: nowrap;
+  white-space: nowrap !important;
+  background: transparent !important;
 }
 
-.xans-product-normalmenu .sort-dropdown li button:hover {
-  background: #fff1d9;
+#shopList .sort-dropdown li a:hover {
+  background: #fff1d9 !important;
 }
 
 /* 3-column seamless grid

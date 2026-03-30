@@ -78,7 +78,7 @@ body:has(.product_scrollx) #container {
   padding-right: 0;
 }
 #container #contents {
-  margin: 50px auto;
+  margin: 50px auto 100px;
   float: none;
   padding: 0;
 }
@@ -991,6 +991,7 @@ a:hover {
     position: absolute;
     top: 45px;
     left: 16px;
+    display: none;
   }
   .xans-layout-mobileaction a {
     overflow: hidden;
@@ -1013,7 +1014,6 @@ a:hover {
   }
   #container #contents {
     width: 92%;
-    margin: 0 auto;
   }
 
   /* 최상단 배너 */
@@ -1722,16 +1722,16 @@ body {
 
 /* contents 밑으로 밀기 */
 #container #contents {
-  padding-top: 111px;
+  padding-top: 100px;
 }
 @media (max-width: 1440px) {
   #container #contents {
-    padding-top: 105px;
+    padding-top: 90px;
   }
 }
 @media (max-width: 1024px) {
   #container #contents {
-    padding-top: 89px;
+    padding-top: 79px;
   }
 }
 
@@ -1983,5 +1983,16 @@ body #tabler-footer .footer-tnc a:hover {
 @media (max-width: 550px) {
   body #tabler-footer {
     padding: 40px 0;
+  }
+}
+
+body.page-index #container #contents {
+  padding-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  body.page-index #container #contents {
+    margin: 70px auto 0 !important;
   }
 }
