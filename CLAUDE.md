@@ -32,9 +32,10 @@ Always verify results at: tabler-tabler.com
 
 # Git Rules
 
+- **Always work directly on master. No branches, no worktrees, no PRs.**
 - Commit after each page or section is completed
 - Commit message format: "feat: about us page layout"
-- Do not push — Roxy pushes manually after review
+- Push directly to master after committing
 
 # Pages
 
