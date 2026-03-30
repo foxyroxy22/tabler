@@ -2,12 +2,6 @@
    About Us Page
    ======================== */
 
-.au-wrap {
-  width: 100%;
-  overflow-x: hidden;
-  font-family: Arial, "Apple SD Gothic Neo", "Noto Sans Regular", "맑은 고딕", sans-serif;
-}
-
 /* Label tag */
 .au-label {
   display: inline-block;
@@ -43,7 +37,7 @@
 .au-hero__title {
   font-size: clamp(64px, 9vw, 130px);
   font-weight: 900;
-  line-height: 1.0;
+  line-height: 1;
   letter-spacing: -0.02em;
   color: #101010;
   margin: 0 0 32px;
@@ -314,7 +308,7 @@
 .au-cta__title {
   font-size: clamp(40px, 6vw, 90px);
   font-weight: 900;
-  line-height: 1.0;
+  line-height: 1;
   letter-spacing: -0.02em;
   color: #101010;
   margin: 0 0 20px;
@@ -345,7 +339,9 @@
   padding: 12px 28px;
   border: 1px solid #101010;
   text-decoration: none;
-  transition: background 0.18s, color 0.18s;
+  transition:
+    background 0.18s,
+    color 0.18s;
 }
 .au-btn--outline {
   background: #fff;
