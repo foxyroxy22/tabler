@@ -2041,6 +2041,11 @@ body.page-index #container #contents {
   font-size: var(--fs-h1);
   color: var(--text-color);
 }
+@media (max-width: 1024px) {
+  .sidebar-logo {
+    font-size: calc(var(--fs-h1) * 0.8);
+  }
+}
 
 .sidebar-products {
   display: grid;
@@ -2101,7 +2106,9 @@ body.page-index #container #contents {
 }
 
 .ham svg rect {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   transform-box: fill-box;
   transform-origin: center center;
 }
