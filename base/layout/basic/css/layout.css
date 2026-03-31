@@ -1595,7 +1595,8 @@ body {
     background-color 0.3s ease,
     border-bottom 0.3s ease;
 }
-#header.is-scrolled {
+#header.is-scrolled,
+#header.sidebar-open {
   background-color: var(--bg-color) !important;
   border-bottom: 1px solid #101010 !important;
 }

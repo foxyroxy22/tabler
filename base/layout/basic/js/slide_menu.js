@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     hamBtn.classList.add("is-open");
     document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
-    if (header) header.style.backgroundColor = "#FFF9F1";
+    if (header) header.classList.add("sidebar-open");
   }
 
   function closeSidebar() {
@@ -34,9 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
       if (!isOpen) sidebar.style.display = "none";
     }, 350);
-    // Clear inline bg and restore based on scroll (mobile only)
     if (header) {
-      header.style.backgroundColor = "";
+      header.classList.remove("sidebar-open");
       if (window.innerWidth <= 1024) {
         if (window.scrollY > 10) {
           header.classList.add("is-scrolled");
