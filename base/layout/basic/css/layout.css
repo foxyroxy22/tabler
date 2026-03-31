@@ -2009,8 +2009,8 @@ body.page-index #container #contents {
   position: fixed;
   top: 89px;
   left: 0;
+  bottom: 0;
   width: 100%;
-  height: calc(100% - 89px);
   background: #edff9e;
   z-index: 1000;
   transform: translateX(-100%);

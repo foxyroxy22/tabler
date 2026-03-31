@@ -34,11 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
       if (!isOpen) sidebar.style.display = "none";
     }, 350);
-    if (window.innerWidth <= 1024) {
-      if (window.scrollY > 10) {
-        if (header) header.classList.add("is-scrolled");
-      } else {
-        if (header) header.classList.remove("is-scrolled");
+    // Clear inline bg and restore based on scroll (mobile only)
+    if (header) {
+      header.style.backgroundColor = "";
+      if (window.innerWidth <= 1024) {
+        if (window.scrollY > 10) {
+          header.classList.add("is-scrolled");
+        } else {
+          header.classList.remove("is-scrolled");
+        }
       }
     }
   }
