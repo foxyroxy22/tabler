@@ -2001,3 +2001,125 @@ body.page-index #container #contents {
     margin: 70px auto 0 !important;
   }
 }
+
+/* ========================
+   Sidebar & Ham
+   ======================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #edff9e;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow-y: auto;
+  margin-top: 89px;
+  border-top: 1px solid var(--text-color);
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar-inner {
+  padding: 20px var(--margin);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-logo {
+  font-size: var(--fs-h1);
+  color: var(--text-color);
+}
+
+.sidebar-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.sidebar-card {
+  border-radius: 16px;
+  border: 1px solid var(--text-color);
+  box-shadow: 3px 3px 0 var(--text-color);
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-decoration: none;
+  color: var(--text-color);
+  overflow: hidden;
+  min-height: 100px;
+  position: relative;
+}
+
+.sidebar-card-info {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-main);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-p6);
+  line-height: 1.3;
+  z-index: 1;
+}
+
+.sidebar-card img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  position: absolute;
+  right: -10px;
+  bottom: -5px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--text-color);
+}
+
+.sidebar-nav a {
+  padding: 20px 0 15px;
+  border-bottom: 1px solid var(--text-color);
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--fs-h2);
+}
+
+.ham svg {
+  overflow: visible;
+}
+
+.ham svg rect {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+.ham.is-open svg rect:nth-child(1) {
+  transform: translateY(10.5px) rotate(45deg) scaleX(1.2);
+}
+.ham.is-open svg rect:nth-child(2) {
+  transform: translateY(9.5px) rotate(45deg) scaleX(1.2);
+}
+.ham.is-open svg rect:nth-child(3),
+.ham.is-open svg rect:nth-child(4) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.ham.is-open svg rect:nth-child(5) {
+  transform: translateY(-9px) rotate(-45deg) scaleX(1.2);
+}
+.ham.is-open svg rect:nth-child(6) {
+  transform: translateY(-10px) rotate(-45deg) scaleX(1.2);
+}
