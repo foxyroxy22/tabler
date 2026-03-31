@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openSidebar() {
     isOpen = true;
-    sidebar.classList.add("active");
+    sidebar.style.transform = "translateX(0)";
     hamBtn.classList.add("is-open");
     document.body.style.overflow = "hidden";
     if (header) header.style.backgroundColor = "#FFF9F1";
@@ -24,11 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function closeSidebar() {
     isOpen = false;
-    sidebar.classList.remove("active");
+    sidebar.style.transform = "translateX(-100%)";
     hamBtn.classList.remove("is-open");
     document.body.style.overflow = "";
     if (window.innerWidth <= 1024) {
-      // ✅ 1024px 이하에서만
       if (window.scrollY > 10) {
         if (header) header.classList.add("is-scrolled");
       } else {
@@ -47,6 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", function () {
     if (window.innerWidth > 1024) {
       header.classList.remove("is-scrolled");
+    }
+  });
+
+  // Reset sidebar if restored from browser back/forward cache
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted) {
+      closeSidebar();
     }
   });
 });
