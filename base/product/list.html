@@ -230,7 +230,12 @@
         </p>
         <div class="sort">
           <!-- native select kept hidden — Cafe24 sort binding -->
-          <select id="selArray" name="selArray" module="product_Orderby" style="display:none">
+          <select
+            id="selArray"
+            name="selArray"
+            module="product_Orderby"
+            style="display: none"
+          >
             <option value>- 정렬방식 -</option>
             <option value="{$param}">{$sort_name}</option>
             <option value="{$param}">{$sort_name}</option>
@@ -240,11 +245,26 @@
             <div class="sort-shadow"></div>
             <div
               class="sort-btn"
-              onclick="var w=document.getElementById('sortCustom');w.classList.toggle('open');event.stopPropagation();"
+              onclick="
+                var w = document.getElementById('sortCustom');
+                w.classList.toggle('open');
+                event.stopPropagation();
+              "
             >
               <span class="sort-label">정렬</span>
-              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L6 6L11 1" stroke="#101010" stroke-width="1.5" stroke-linecap="round"/>
+              <svg
+                width="12"
+                height="8"
+                viewBox="0 0 12 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 1L6 6L11 1"
+                  stroke="#101010"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
               </svg>
             </div>
             <ul class="sort-dropdown">

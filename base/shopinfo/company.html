@@ -2,11 +2,10 @@
 <!--@css(/layout/basic/css/about.css)-->
 
 <div class="au-wrap">
-
   <!-- Hero -->
   <section class="au-hero">
     <div class="au-hero__inner">
-      <h1 class="au-hero__title">HELLO,<br>WE'RE TABLER!</h1>
+      <h1 class="au-hero__title">HELLO,<br />WE'RE TABLER!</h1>
       <p class="au-hero__sub">펼치는 순간, 그 곳이 우리의 공간이 됩니다.</p>
     </div>
   </section>
@@ -14,13 +13,22 @@
   <!-- Marquee -->
   <section class="au-marquee">
     <div class="au-marquee__row">
-      <span>FUN</span><span>FUN</span><span>FUN</span><span>FUN</span><span>FUN</span>
+      <div class="au-marquee__inner">
+        <span>FUN</span><span>FUN</span><span>FUN</span><span>FUN</span><span>FUN</span><span>FUN</span>
+        <span aria-hidden="true">FUN</span><span aria-hidden="true">FUN</span><span aria-hidden="true">FUN</span><span aria-hidden="true">FUN</span><span aria-hidden="true">FUN</span><span aria-hidden="true">FUN</span>
+      </div>
     </div>
     <div class="au-marquee__row">
-      <span>EASY</span><span>EASY</span><span>EASY</span><span>EASY</span>
+      <div class="au-marquee__inner au-marquee__inner--reverse">
+        <span>EASY</span><span>EASY</span><span>EASY</span><span>EASY</span><span>EASY</span><span>EASY</span>
+        <span aria-hidden="true">EASY</span><span aria-hidden="true">EASY</span><span aria-hidden="true">EASY</span><span aria-hidden="true">EASY</span><span aria-hidden="true">EASY</span><span aria-hidden="true">EASY</span>
+      </div>
     </div>
     <div class="au-marquee__row">
-      <span>NOW</span><span>NOW</span><span>NOW</span><span>NOW</span><span>NOW</span>
+      <div class="au-marquee__inner">
+        <span>NOW</span><span>NOW</span><span>NOW</span><span>NOW</span><span>NOW</span><span>NOW</span>
+        <span aria-hidden="true">NOW</span><span aria-hidden="true">NOW</span><span aria-hidden="true">NOW</span><span aria-hidden="true">NOW</span><span aria-hidden="true">NOW</span><span aria-hidden="true">NOW</span>
+      </div>
     </div>
   </section>
 
@@ -28,8 +36,16 @@
   <section class="au-split au-story">
     <div class="au-split__text">
       <div class="au-label">OUR STORY</div>
-      <h2 class="au-split__heading">IT STARTED ON<br>A BEACH IN<br>GAWNGANLIN.</h2>
-      <p class="au-split__body">테블러는 불편함에서 태어났습니다. 테이블도 없이 바닥에 앉아 따뜻한 맥주를 마시는 사람들. 광안리 해변에서 매년 반복되는 풍경이었습니다. 왜 아이스박스에는 테이블이 없을까요? 단순하지만, 아무도 묻지 않았던 질문. 20년 아이스박스 장인인 아버지를 설득하는 데 그 질문 하나면 충분했습니다. 그렇게 테블러가 만들어졌습니다.</p>
+      <h2 class="au-split__heading">
+        IT STARTED ON<br />A BEACH IN<br />GAWNGANLIN.
+      </h2>
+      <p class="au-split__body">
+        테블러는 불편함에서 태어났습니다. 테이블도 없이 바닥에 앉아 따뜻한
+        맥주를 마시는 사람들. 광안리 해변에서 매년 반복되는 풍경이었습니다. 왜
+        아이스박스에는 테이블이 없을까요? 단순하지만, 아무도 묻지 않았던 질문.
+        20년 아이스박스 장인인 아버지를 설득하는 데 그 질문 하나면 충분했습니다.
+        그렇게 테블러가 만들어졌습니다.
+      </p>
       <p class="au-split__caption">Born in Busan. Built for everywhere.</p>
     </div>
     <div class="au-split__img"></div>
@@ -41,28 +57,41 @@
       <div class="au-label au-label--center">WHAT IS TABLER</div>
       <h2 class="au-what__title">TABLE + TUMBLER</h2>
       <p class="au-what__subtitle">테이블과 텀블러의 혁신적인 조합,</p>
-      <p class="au-what__desc">테블러는 세상에 없던 물건입니다. 앞면을 펼치면 3초 만에 테이블이 완성됩니다.<br>캠핑장이든, 해수욕장이든, 공원이든 - 테블러 하나면 충분합니다.</p>
+      <p class="au-what__desc">
+        테블러는 세상에 없던 물건입니다. 앞면을 펼치면 3초 만에 테이블이
+        완성됩니다.<br />캠핑장이든, 해수욕장이든, 공원이든 - 테블러 하나면
+        충분합니다.
+      </p>
       <ul class="au-features">
         <li class="au-features__item">
           <div class="au-features__head">
             <span class="au-features__icon">🇰🇷</span>
             <strong class="au-features__name">100% 국산 제품</strong>
           </div>
-          <p class="au-features__desc">제품 설계와 개발, 조립, 생산 전 과정을 국내에서 진행, 100% 국산 제품의 자부심!</p>
+          <p class="au-features__desc">
+            제품 설계와 개발, 조립, 생산 전 과정을 국내에서 진행, 100% 국산
+            제품의 자부심!
+          </p>
         </li>
         <li class="au-features__item">
           <div class="au-features__head">
             <span class="au-features__icon">⚡</span>
             <strong class="au-features__name">3초 완성, 양면 개폐</strong>
           </div>
-          <p class="au-features__desc">테이블 일체형으로 실내 활동, 피크닉, 캠핑, 차박 등 뛰어난 휴대성으로 편리한 사용!</p>
+          <p class="au-features__desc">
+            테이블 일체형으로 실내 활동, 피크닉, 캠핑, 차박 등 뛰어난 휴대성으로
+            편리한 사용!
+          </p>
         </li>
         <li class="au-features__item">
           <div class="au-features__head">
             <span class="au-features__icon">❄️</span>
             <strong class="au-features__name">의료급 보냉 기술력</strong>
           </div>
-          <p class="au-features__desc">72시간 보냉, 10시간 보온! 16년 아이스박스 전문 제조 기술로 신뢰할 수 있는 성능 보증</p>
+          <p class="au-features__desc">
+            72시간 보냉, 10시간 보온! 16년 아이스박스 전문 제조 기술로 신뢰할 수
+            있는 성능 보증
+          </p>
         </li>
       </ul>
     </div>
@@ -79,9 +108,15 @@
   <section class="au-quality">
     <div class="au-quality__inner">
       <div class="au-label au-label--center">QUALITY CHECK</div>
-      <h2 class="au-quality__title">CUTE ON THE OUTSIDE,<br>SERIOUS ON THE INSIDE</h2>
+      <h2 class="au-quality__title">
+        CUTE ON THE OUTSIDE,<br />SERIOUS ON THE INSIDE
+      </h2>
       <p class="au-quality__subtitle">예쁜데, 진짜 잘 됩니다.</p>
-      <p class="au-quality__desc">디자인은 예쁜데 성능은 별로 아닐까?" 걱정하셨나요? 테블러의 보냉 기술은 20년 이상 아이스박스를 만들어온 전문 제조사에서 탄생했습니다. 보기에도 좋고, 성능도 진짜입니다.</p>
+      <p class="au-quality__desc">
+        디자인은 예쁜데 성능은 별로 아닐까?" 걱정하셨나요? 테블러의 보냉 기술은
+        20년 이상 아이스박스를 만들어온 전문 제조사에서 탄생했습니다. 보기에도
+        좋고, 성능도 진짜입니다.
+      </p>
     </div>
   </section>
 
@@ -89,24 +124,39 @@
   <section class="au-split au-reasons">
     <div class="au-split__text">
       <div class="au-label">OUR STORY</div>
-      <h2 class="au-split__heading">THE<br>REASONS</h2>
+      <h2 class="au-split__heading">THE<br />REASONS</h2>
       <p class="au-split__sub">우리가 테블러를 만드는 이유</p>
       <ul class="au-reasons__list">
         <li class="au-reasons__item">
           <strong class="au-reasons__keyword">FUN</strong>
-          <p class="au-reasons__desc">테블러는 그냥 물건이 아닙니다. 꺼내는 순간 분위기가 달라지는, 그런 존재가 되길 원합니다.</p>
+          <p class="au-reasons__desc">
+            테블러는 그냥 물건이 아닙니다. 꺼내는 순간 분위기가 달라지는, 그런
+            존재가 되길 원합니다.
+          </p>
         </li>
         <li class="au-reasons__item">
           <strong class="au-reasons__keyword">EASY</strong>
-          <p class="au-reasons__desc">펼치면 테이블, 닫으면 아이스박스. 복잡한 건 없습니다. 그냥 즐기세요.</p>
+          <p class="au-reasons__desc">
+            펼치면 테이블, 닫으면 아이스박스. 복잡한 건 없습니다. 그냥 즐기세요.
+          </p>
         </li>
         <li class="au-reasons__item">
           <strong class="au-reasons__keyword">NOW</strong>
-          <p class="au-reasons__desc">지금 이 순간을 즐기세요. 테블러는 그 순간을 더 차갑고, 더 신나게 만들어드립니다.</p>
+          <p class="au-reasons__desc">
+            지금 이 순간을 즐기세요. 테블러는 그 순간을 더 차갑고, 더 신나게
+            만들어드립니다.
+          </p>
         </li>
       </ul>
     </div>
     <div class="au-split__img"></div>
+  </section>
+
+  <!-- Hashtag Banner -->
+  <section class="au-hashtag">
+    <div class="au-hashtag__inner">
+      <span class="au-hashtag__text">#FUN #EASY #NOW</span>
+    </div>
   </section>
 
   <!-- CTA -->
@@ -116,10 +166,11 @@
       <p class="au-cta__subtitle">자, 이제 당신 차례입니다.</p>
       <p class="au-cta__desc">어떤 컬러가 당신의 바이브인지 아직 모르겠다면?</p>
       <div class="au-cta__btns">
-        <a href="/product/list.html" class="au-btn au-btn--outline">SHOP ALL</a>
-        <a href="/product/vibe-test.html" class="au-btn au-btn--fill">VIBE TEST</a>
+        <a href="/product/list.html" class="au-btn au-btn--outline">SHOP TABLER</a>
+        <a href="/product/vibe-test.html" class="au-btn au-btn--fill"
+          >VIBE TEST</a
+        >
       </div>
     </div>
   </section>
-
 </div>
