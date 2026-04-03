@@ -1,0 +1,63 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/vibetest.css)-->
+
+<div class="vt-wrap">
+  <!-- Hero -->
+  <section class="vt-hero">
+    <div class="vt-hero__inner">
+      <h1 class="vt-hero__title t-h1">WHAT'S YOUR<br />TABLER VIBE?</h1>
+      <p class="vt-hero__sub">
+        당신이 꿈꾸는 완벽한 휴식은 어떤 모습인가요?<br />
+        간단한 4가지 질문으로 나의 아웃도어 취향을 알아보고, 나와 가장 잘
+        어울리는 테블러 컬러를 추천받아 보세요!
+      </p>
+      <a href="#" class="vt-hero__btn btn btn-sm">START TEST</a>
+    </div>
+  </section>
+
+  <!-- Scrolling Boxes -->
+  <section class="vt-boxes">
+    <div class="vt-track" id="vtTrack">
+      <div class="vt-box" data-color="red"></div>
+      <div class="vt-box" data-color="blue"></div>
+      <div class="vt-box" data-color="yellow"></div>
+      <div class="vt-box" data-color="teal"></div>
+      <div class="vt-box" data-color="olive"></div>
+      <div class="vt-box" data-color="orange"></div>
+      <div class="vt-box" data-color="gray"></div>
+      <!-- duplicate for seamless loop -->
+      <div class="vt-box" data-color="red" aria-hidden="true"></div>
+      <div class="vt-box" data-color="blue" aria-hidden="true"></div>
+      <div class="vt-box" data-color="yellow" aria-hidden="true"></div>
+      <div class="vt-box" data-color="teal" aria-hidden="true"></div>
+      <div class="vt-box" data-color="olive" aria-hidden="true"></div>
+      <div class="vt-box" data-color="orange" aria-hidden="true"></div>
+      <div class="vt-box" data-color="gray" aria-hidden="true"></div>
+    </div>
+  </section>
+</div>
+
+<script>
+  (function () {
+    var boxes = document.querySelectorAll("#vtTrack .vt-box");
+
+    function jumpRandom() {
+      // pick a random box
+      var idx = Math.floor(Math.random() * boxes.length);
+      var box = boxes[idx];
+
+      if (!box.classList.contains("vt-box--jump")) {
+        box.classList.add("vt-box--jump");
+        box.addEventListener("animationend", function onEnd() {
+          box.classList.remove("vt-box--jump");
+          box.removeEventListener("animationend", onEnd);
+        });
+      }
+
+      // schedule next jump at a random interval between 300ms and 900ms
+      setTimeout(jumpRandom, 300 + Math.random() * 600);
+    }
+
+    jumpRandom();
+  })();
+</script>

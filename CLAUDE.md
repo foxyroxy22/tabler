@@ -6,8 +6,8 @@ Cafe24 skin customization — local files synced via SFTP
 # Important: How to Preview
 
 Local HTML files show unstyled — Cafe24 loads CSS via import at runtime
-Always verify results at: tabler-tabler.com
 Use root CSS grammar written in custom.css
+Do NOT remind the user to check on the live site — they already know.
 
 # Cafe24 File Structure
 

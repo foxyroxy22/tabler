@@ -1,0 +1,171 @@
+/* ========================
+   Vibe Test Page
+   ======================== */
+
+.vt-wrap {
+  background-color: #101010;
+  color: #fff;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ========================
+   Hero
+   ======================== */
+.vt-hero {
+  text-align: center;
+}
+
+.vt-hero__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.vt-hero__title {
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.vt-hero__sub {
+  font-family: var(--font-main);
+  font-size: var(--fs-p5);
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 48px;
+  word-break: keep-all;
+}
+
+.vt-hero__btn {
+  background-color: #edff9e;
+  box-shadow: 3px 3px 0 #fff;
+}
+
+.vt-hero__btn:hover {
+}
+
+/* ========================
+   Scrolling Boxes
+   ======================== */
+.vt-boxes {
+  overflow: hidden;
+  padding: 60px 0 80px;
+}
+
+/* Infinite scroll animation */
+@keyframes vt-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.vt-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: vt-scroll 18s linear infinite;
+}
+
+/* ========================
+   Individual Box
+   ======================== */
+.vt-box {
+  width: 260px;
+  height: 260px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  background-color: #3a3a3a;
+  border: 2px solid #555;
+  /* jump transition base */
+  transition: transform 0.05s ease;
+}
+
+/* color variants — user will add img src later, kept gray for now */
+.vt-box[data-color="red"] {
+  background-color: #3a3a3a;
+}
+.vt-box[data-color="blue"] {
+  background-color: #3a3a3a;
+}
+.vt-box[data-color="yellow"] {
+  background-color: #3a3a3a;
+}
+.vt-box[data-color="teal"] {
+  background-color: #3a3a3a;
+}
+.vt-box[data-color="olive"] {
+  background-color: #3a3a3a;
+}
+.vt-box[data-color="orange"] {
+  background-color: #3a3a3a;
+}
+.vt-box[data-color="gray"] {
+  background-color: #3a3a3a;
+}
+
+/* Random jump animation */
+@keyframes vt-jump {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-40px);
+  }
+  55% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(-28px);
+  }
+  90% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.vt-box--jump {
+  animation: vt-jump 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ========================
+   Responsive
+   ======================== */
+@media (max-width: 1024px) {
+  .vt-hero {
+    padding: 60px var(--margin) 80px;
+  }
+
+  .vt-box {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 450px) {
+  .vt-hero {
+    padding: 48px var(--margin) 64px;
+  }
+
+  .vt-hero__sub {
+    font-size: var(--fs-p6);
+  }
+
+  .vt-box {
+    width: 160px;
+    height: 160px;
+    border-radius: 14px;
+  }
+
+  .vt-track {
+    gap: 16px;
+  }
+}

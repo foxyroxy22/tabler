@@ -82,10 +82,26 @@ body:has(.au-wrap) #container {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+body:has(.vt-wrap) #container {
+  padding: 0 !important;
+}
 #container #contents {
   margin: 50px auto 100px;
   float: none;
   padding: 0;
+}
+body:has(.au-wrap) #container #contents {
+  margin: 50px auto 0;
+}
+@media (max-width: 1024px) {
+  body:has(.au-wrap) #container #contents {
+    width: 100% !important;
+    padding: 0;
+  }
+}
+body:has(.vt-wrap) #container #contents {
+  padding: 0 !important;
+  margin: 30px auto 0;
 }
 .cboth {
   clear: both;

@@ -201,32 +201,17 @@
   display: inline-block;
 }
 
-#shopList .sort-shadow {
-  position: absolute;
-  inset: 3px -3px -3px 3px;
-  background: var(--text-color);
-  border-radius: 999px;
-  z-index: 0;
-  transition: border-radius 0.2s;
-}
-
-#shopList .sort-custom.open .sort-shadow {
-  border-radius: 20px;
-}
-
 #shopList .sort-btn {
   position: relative;
   z-index: 1;
   background: #fff !important;
   border: 1px solid var(--text-color) !important;
   border-radius: 999px !important;
-  padding: 8px 24px !important;
   font-family: var(--font-main) !important;
-  font-size: var(--fs-p6) !important;
+  font-size: var(--fs-p7) !important;
   font-weight: var(--fw-sb) !important;
-  color: var(--text-color) !important;
   cursor: pointer;
-  min-width: 160px;
+  min-width: 100px;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -265,7 +250,7 @@
   border-top: none;
   border-radius: 0 0 20px 20px;
   overflow: hidden;
-  min-width: 160px;
+  min-width: 100px;
 }
 
 #shopList .sort-custom.open .sort-dropdown {
@@ -277,7 +262,7 @@
   padding: 8px 24px !important;
   font-family: var(--font-main) !important;
   font-size: var(--fs-p6) !important;
-  color: var(--text-color) !important;
+  color: var(--text-color, #101010) !important;
   text-decoration: none !important;
   text-align: center !important;
   transition: background 0.15s;

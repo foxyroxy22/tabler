@@ -2254,7 +2254,7 @@ div.ec-base-help ul {
     no-repeat center center;
   background-size: 40px;
 }
-.ec-base-paginate.typeList > a:nth-child(3) {
+.ec-base-paginate.typeList a:nth-of-type(3) {
   transform: rotate(180deg);
 }
 .ec-base-paginate.typeList > a.first {

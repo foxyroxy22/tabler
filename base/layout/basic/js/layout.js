@@ -136,48 +136,6 @@ function bottomScroll() {
   }
 }
 
-// function bottomNav() {
-//   var lastScrollTop = 0;
-//   var btnTop = document.querySelector(".bottom-nav__top");
-//   var fixedButton = document.getElementById("orderFixArea");
-//   if (fixedButton) {
-//     document.body.classList.add("button--fixed");
-//   }
-
-//   window.addEventListener("scroll", function () {
-//     var scroll = window.pageYOffset || document.documentElement.scrollTop;
-//     var nav = document.querySelector(".bottom-nav");
-//     if (scroll > lastScrollTop) {
-//       nav.classList.add("bottom-nav--hide");
-//     } else {
-//       nav.classList.remove("bottom-nav--hide");
-//     }
-//     // scroll bottom
-//     if (
-//       scroll ===
-//       document.body.scrollHeight - document.documentElement.offsetHeight
-//     ) {
-//       nav.classList.remove("bottom-nav--hide");
-//     }
-//     lastScrollTop = scroll <= 0 ? 0 : scroll;
-
-//     // top button
-//     var currentScrollPercentage = getCurrentScrollPercentage();
-//     if (currentScrollPercentage > 30) {
-//       btnTop.classList.add("bottom-nav__top--show");
-//     } else {
-//       btnTop.classList.remove("bottom-nav__top--show");
-//     }
-//   });
-
-//   btnTop.addEventListener("click", function () {
-//     window.scrollTo({
-//       top: 0,
-//       behavior: "smooth",
-//     });
-//   });
-// }
-
 function getOffset(element) {
   if (!element.getClientRects().length) {
     return { top: 0, left: 0 };

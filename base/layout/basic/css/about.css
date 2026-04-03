@@ -2,52 +2,151 @@
    About Us Page
    ======================== */
 
+/* font */
+:root {
+  /* --- Font Weights --- */
+  --fw-reg: 400;
+  --fw-sb: 600;
+  --fw-bold: 700;
+
+  /* --- PC Font Sizes (1rem = 16px 기준) --- */
+  --fs-h1: 5rem;
+  --lh-h1: 1.1; /* 80px */
+  --fs-h2: 4rem;
+  --lh-h2: 1.2; /* 64px */
+  --fs-p1: 2.5rem;
+  --lh-p1: 1.3; /* 40px */
+  --fs-p2: 2rem;
+  --lh-p2: 1.4; /* 32px */
+  --fs-p3: 1.75rem;
+  --lh-p3: 1.4; /* 28px */
+  --fs-p4: 1.25rem;
+  --lh-p4: 1.5; /* 20px */
+  --fs-p5: 1rem;
+  --lh-p5: 1.5; /* 16px */
+  --fs-p6: 0.875rem;
+  --lh-p6: 1.6; /* 14px */
+  --fs-p7: 0.75rem;
+  --lh-p7: 1.6; /* 12px */
+
+  --margin: 64px;
+  --gutter: 32px;
+
+  --text-color: #101010;
+  --bg-color: #fff9f2;
+}
+
+/* --- Tablet Font Sizes (1024px 이하) --- */
+@media (max-width: 1024px) {
+  :root {
+    --fs-h1: 3.5rem; /* 56px */
+    --fs-h2: 3rem; /* 48px */
+    --fs-p1: 2rem; /* 32px */
+    --fs-p2: 1.5rem; /* 24px */
+    --fs-p3: 1.25rem; /* 20px */
+    --fs-p4: 1.125rem; /* 18px */
+    --fs-p5: 1rem; /* 16px */
+    --fs-p6: 0.875rem; /* 14px */
+    --fs-p7: 0.75rem; /* 12px */
+  }
+}
+
+/* --- Mobile Font Sizes (375px 이하 - 전체적으로 축소 및 소수점 3자리) --- */
+@media (max-width: 450px) {
+  :root {
+    --fs-h1: 2rem; /* 32px */
+    --fs-h2: 1.75rem; /* 28px */
+    --fs-p1: 1.375rem; /* 22px */
+    --fs-p2: 1.125rem; /* 18px */
+    --fs-p3: 1rem; /* 16px */
+    --fs-p4: 0.938rem; /* 15px */
+    --fs-p5: 0.875rem; /* 14px */
+    --fs-p6: 0.75rem; /* 12px */
+    --fs-p7: 0.688rem; /* 11px */
+  }
+}
+
+/* 마진 & 거터 */
+@media (max-width: 1440px) {
+  :root {
+    --margin: 48px;
+    --gutter: 24px;
+  }
+}
+
+/* Mobile (375px 이하) */
+@media (max-width: 1024px) {
+  :root {
+    --margin: 20px;
+    --gutter: 12px;
+  }
+}
+
 /* Label tag */
 .au-label {
   display: inline-block;
-  border: 1px solid #101010;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  padding: 7px 14px;
-  text-transform: uppercase;
-  color: #101010;
-  margin-bottom: 48px;
+  border: 1px solid var(--text-color);
+  padding: 10px 14px 7px;
+  margin-bottom: 30px;
+  background-color: #edff9e;
 }
 .au-label--center {
-  display: block;
-  text-align: center;
-  width: fit-content;
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 48px;
+  margin-bottom: 30px;
+}
+
+/* btn tag */
+.btn {
+  display: inline-block;
+  font-weight: var(--fw-sb);
+  font-family: var(--font-main);
+  border: 1px solid #101010;
+  cursor: pointer;
+  border-radius: 40px;
+  transition:
+    transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px #101010;
+}
+
+/* 사이즈 */
+.btn-md {
+  padding: 0 36px;
+  font-size: var(--fs-p5);
+  height: 40px;
+  line-height: 40px;
+}
+
+.btn-sm {
+  padding: 0 20px; /* 원하는 값으로 */
+  font-size: var(--fs-p6); /* 원하는 값으로 */
+  height: 32px;
+  line-height: 32px;
 }
 
 /* ========================
    Hero
    ======================== */
 .au-hero {
-  padding: 100px 64px 80px;
+  padding: 60px 64px 80px;
   border-bottom: 1px solid #101010;
+  text-align: center;
 }
 .au-hero__inner {
   max-width: 1792px;
   margin: 0 auto;
 }
 .au-hero__title {
-  font-size: clamp(64px, 9vw, 130px);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: #101010;
-  margin: 0 0 32px;
-  text-transform: uppercase;
+  font-size: var(--fs-h1);
 }
 .au-hero__sub {
-  font-size: 16px;
-  color: #555;
-  margin: 0;
-  letter-spacing: 0.02em;
+  font-size: var(--fs-p5);
 }
 
 /* ========================
@@ -72,8 +171,8 @@
 
 .au-marquee {
   overflow: hidden;
-  border-bottom: 1px solid #101010;
-  background: #101010;
+  padding-top: 20px;
+  background-color: #101010;
 }
 .au-marquee__row {
   overflow: hidden;
@@ -92,9 +191,7 @@
 }
 .au-marquee__row span {
   font-size: clamp(72px, 11vw, 160px);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  color: #c8f000;
+  color: #edff9e;
   line-height: 1;
   padding: 4px 32px 4px 0;
   text-transform: uppercase;
@@ -108,40 +205,31 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 600px;
-  border-bottom: 1px solid #101010;
+  border-bottom: 1px solid var(--text-color);
 }
 .au-split__text {
-  padding: 80px 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-right: 1px solid #101010;
+  padding: 80px 40px 80px var(--margin);
+  border-right: 1px solid var(--text-color);
 }
 .au-split__heading {
-  font-size: clamp(32px, 4vw, 64px);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: #101010;
   margin: 0 0 32px;
-  text-transform: uppercase;
+  font-size: var(--fs-h2);
 }
 .au-split__body {
-  font-size: 15px;
-  line-height: 1.85;
-  color: #444;
-  margin: 0 0 24px;
+  margin: 0 0 12px;
+}
+.au-split__body li {
+  margin-bottom: 12px;
+  font-size: var(--fs-p5);
 }
 .au-split__caption {
-  font-size: 13px;
-  letter-spacing: 0.06em;
   color: #888;
-  margin: 0;
   font-style: italic;
+  margin-top: 20px;
 }
 .au-split__sub {
-  font-size: 16px;
-  color: #555;
+  font-size: var(--fs-p4);
+  font-weight: var(--fw-sb);
   margin: -20px 0 32px;
 }
 .au-split__img {
@@ -153,35 +241,21 @@
    WHAT IS TABLER
    ======================== */
 .au-what {
-  padding: 100px 64px;
-  border-bottom: 1px solid #101010;
+  padding: 80px 0;
   text-align: center;
 }
-.au-what__inner {
-  max-width: 1792px;
-  margin: 0 auto;
-}
 .au-what__title {
-  font-size: clamp(48px, 7vw, 110px);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  color: #101010;
-  line-height: 1;
-  margin: 0 0 16px;
-  text-transform: uppercase;
+  font-size: var(--fs-h2);
+  margin: 0 0 10px;
 }
 .au-what__subtitle {
-  font-size: 22px;
-  font-weight: 500;
-  color: #101010;
+  font-size: var(--fs-p4);
+  font-weight: var(--fw-sb);
   margin: 0 0 24px;
-  letter-spacing: 0.02em;
 }
 .au-what__desc {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #555;
-  margin: 0 0 64px;
+  font-size: var(--fs-p5);
+  margin: 0 0 50px;
 }
 .au-features {
   display: grid;
@@ -194,7 +268,8 @@
   border: 1px solid #101010;
 }
 .au-features__item {
-  padding: 32px 28px;
+  padding: 20px;
+  background-color: #fff;
   text-align: left;
   border-right: 1px solid #101010;
 }
@@ -212,15 +287,11 @@
   line-height: 1;
 }
 .au-features__name {
-  font-size: 14px;
-  font-weight: 700;
-  color: #101010;
-  letter-spacing: 0.02em;
+  font-size: var(--fs-p5);
+  font-weight: var(--fw-sb);
 }
 .au-features__desc {
-  font-size: 13px;
-  line-height: 1.75;
-  color: #666;
+  font-size: var(--fs-p6);
   margin: 0;
 }
 
@@ -246,7 +317,7 @@
    QUALITY CHECK
    ======================== */
 .au-quality {
-  padding: 100px 64px;
+  padding: 80px 0;
   border-bottom: 1px solid #101010;
   text-align: center;
 }
@@ -255,26 +326,18 @@
   margin: 0 auto;
 }
 .au-quality__title {
-  font-size: clamp(36px, 5vw, 80px);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: #101010;
+  font-size: var(--fs-h2);
   margin: 0 0 20px;
-  text-transform: uppercase;
 }
 .au-quality__subtitle {
-  font-size: 22px;
-  font-weight: 500;
-  color: #101010;
+  font-size: var(--fs-p4);
+  font-weight: var(--fw-sb);
   margin: 0 0 28px;
 }
 .au-quality__desc {
-  font-size: 15px;
-  line-height: 1.85;
-  color: #555;
-  margin: 0 auto;
+  font-size: var(--fs-p5);
   max-width: 760px;
+  margin: 0 auto;
 }
 
 /* ========================
@@ -304,54 +367,46 @@
 }
 .au-reasons__keyword {
   display: block;
-  font-size: 16px;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  color: #101010;
-  margin-bottom: 12px;
+  font-size: var(--fs-p5);
+  font-weight: var(--fw-sb);
+  font-family: pretendard, sans-serif;
+  margin-bottom: 20px;
 }
 .au-reasons__desc {
-  font-size: 13px;
-  line-height: 1.75;
-  color: #666;
-  margin: 0;
+  font-size: var(--fs-p6);
 }
 
 /* ========================
    CTA
    ======================== */
 .au-cta {
-  padding: 100px 64px;
+  padding: 80px 0;
   text-align: center;
-  border-bottom: 1px solid #101010;
+  background-color: var(--text-color);
 }
 .au-cta__inner {
-  max-width: 1792px;
   margin: 0 auto;
 }
 .au-cta__title {
-  font-size: clamp(40px, 6vw, 90px);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: #101010;
+  font-size: var(--fs-h2);
+  color: #fff;
   margin: 0 0 20px;
   text-transform: uppercase;
 }
 .au-cta__subtitle {
-  font-size: 22px;
-  font-weight: 500;
-  color: #101010;
-  margin: 0 0 12px;
+  font-size: var(--fs-p4);
+  font-weight: var(--fw-sb);
+  color: #fff;
+  margin: 0 0 20px;
 }
 .au-cta__desc {
-  font-size: 15px;
-  color: #666;
-  margin: 0 0 48px;
+  font-size: var(--fs-p5);
+  color: #fff;
+  margin: 0 0 35px;
 }
 .au-cta__btns {
   display: flex;
-  gap: 16px;
+  gap: 30px;
   justify-content: center;
 }
 .au-btn {
@@ -367,54 +422,42 @@
     background 0.18s,
     color 0.18s;
 }
-.au-btn--outline {
+.au-btn--outline.btn {
+  background: #edff9e;
+  color: #101010;
+  box-shadow: 3px 3px 0px #fff;
+}
+.au-btn--fill.btn {
   background: #fff;
   color: #101010;
-}
-.au-btn--outline:hover {
-  background: #101010;
-  color: #fff;
-  text-decoration: none;
-}
-.au-btn--fill {
-  background: #101010;
-  color: #fff;
-}
-.au-btn--fill:hover {
-  background: #333;
-  text-decoration: none;
-}
-
-/* ========================
-   Hashtag Banner
-   ======================== */
-.au-hashtag {
-  background: #101010;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
-  padding: 56px 64px;
-  text-align: center;
-}
-.au-hashtag__inner {
-  max-width: 1792px;
-  margin: 0 auto;
-}
-.au-hashtag__text {
-  display: block;
-  font-size: clamp(48px, 8vw, 130px);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  color: #c8f000;
-  text-transform: uppercase;
+  box-shadow: 3px 3px 0px #edff9e;
 }
 
 /* ========================
    Responsive
    ======================== */
+@media all and (max-width: 1650px) {
+  .au-reasons__list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .au-reasons__item {
+    border-right: none;
+    border-bottom: 1px solid #e0e0da;
+    padding-bottom: 24px;
+    margin-right: 0;
+  }
+  .au-reasons__item:last-child {
+    border-bottom: none;
+  }
+}
+
 @media all and (max-width: 1023px) {
   .au-hero {
-    padding: 60px 24px 48px;
+    padding: 80px 24px 48px;
+  }
+  .au-reasons .au-split__img {
+    order: -1;
   }
   .au-split {
     grid-template-columns: 1fr;
@@ -426,8 +469,12 @@
     border-bottom: 1px solid #101010;
   }
   .au-split__img {
-    min-height: 300px;
+    min-height: 450px;
   }
+  .au-reasons .au-split__img {
+    border-bottom: 1px solid #101010;
+  }
+
   .au-what {
     padding: 60px 24px;
   }
@@ -451,16 +498,6 @@
   .au-hashtag {
     padding: 40px 24px;
   }
-  .au-reasons__list {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .au-reasons__item {
-    border-right: none;
-    border-bottom: 1px solid #e0e0da;
-    padding-bottom: 24px;
-    margin-right: 0;
-  }
 }
 
 @media all and (max-width: 767px) {
@@ -482,8 +519,12 @@
   .au-gallery__item:last-child {
     border-bottom: none;
   }
+  .au-cta__subtitle {
+    margin: 0 0 12px;
+  }
   .au-cta__btns {
     flex-direction: column;
     align-items: center;
+    gap: 16px;
   }
 }
