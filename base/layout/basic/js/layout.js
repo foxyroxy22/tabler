@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-  bottomNav();
+  //bottomNav(); 사용안함
   fixedHeader();
   handleNav();
   //quickGoTop(); 사용안함 210805 서정환 수정
