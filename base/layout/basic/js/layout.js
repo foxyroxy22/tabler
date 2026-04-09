@@ -1,5 +1,4 @@
 window.addEventListener("load", function () {
-  //bottomNav(); 사용안함
   fixedHeader();
   handleNav();
   //quickGoTop(); 사용안함 210805 서정환 수정
@@ -119,47 +118,6 @@ function handleDimmed(target, element, className) {
   });
 }
 
-function bottomScroll() {
-  var lastScrollTop = 0;
-  var delta = 5;
-  var fixBox = document.querySelector(".bottom-nav__top");
-  var fixBoxHeight = fixBox.offsetHeight;
-  var didScroll;
-
-  window.onscroll = function (e) {
-    didScroll = true;
-  };
-
-  setInterval(function () {
-    if (didScroll) {
-      hasScrolled();
-      didScroll = false;
-    }
-  }, 250);
-
-  function hasScrolled() {
-    var nowScrollTop = window.scrollY;
-    if (Math.abs(lastScrollTop - nowScrollTop) <= delta) {
-      return;
-    }
-    if (nowScrollTop > lastScrollTop && nowScrollTop > fixBoxHeight) {
-      //Scroll down
-      var scrollTop = window.scrollTop();
-      var innerHeight = window.innerHeight();
-      var scrollHeight = $("body").prop("scrollHeight");
-      if (scrollTop + innerHeight >= scrollHeight) {
-        fixBox.classList.add("bottom-nav--hide");
-        return true;
-      }
-    } else {
-      if (nowScrollTop + window.innerHeight < document.body.offsetHeight) {
-        //Scroll up
-        fixBox.classList.remove("bottom-nav--hide");
-      }
-    }
-    lastScrollTop = nowScrollTop;
-  }
-}
 
 function getOffset(element) {
   if (!element.getClientRects().length) {
