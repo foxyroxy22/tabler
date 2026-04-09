@@ -7,7 +7,28 @@ window.addEventListener("load", function () {
   //toggleClass('.xans-layout-info.info__customer', '.xans-layout-info.info__customer .toggle', 'selected'); 사용안함 210805 서정환 수정
   //topBanner(); 사용안함 210804 서정환 수정
   handleScroll();
+  handleSidebar();
 });
+
+function handleSidebar() {
+  var ham = document.querySelector(".ham");
+  var sidebar = document.getElementById("sidebar");
+  if (!ham || !sidebar) return;
+
+  ham.addEventListener("click", function () {
+    var isOpen = sidebar.classList.toggle("active");
+    ham.classList.toggle("is-open", isOpen);
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  });
+
+  sidebar.addEventListener("click", function (e) {
+    if (e.target === sidebar) {
+      sidebar.classList.remove("active");
+      ham.classList.remove("is-open");
+      document.body.style.overflow = "";
+    }
+  });
+}
 
 function handleScroll() {
   var scrollPosition = 0;
@@ -65,10 +86,12 @@ function handleNav() {
       document.body.classList.add("expand");
     });
   });
-  btnClose.addEventListener("click", function () {
-    document.body.classList.remove("expand");
-  });
-  handleDimmed(dimmed, document.body, "expand");
+  if (btnClose) {
+    btnClose.addEventListener("click", function () {
+      document.body.classList.remove("expand");
+    });
+  }
+  if (dimmed) handleDimmed(dimmed, document.body, "expand");
 }
 
 function searchLayer() {
@@ -81,11 +104,13 @@ function searchLayer() {
       //input.focus();
     });
   });
-  btnClose.addEventListener("click", function () {
-    document.body.classList.remove("searchExpand");
-  });
+  if (btnClose) {
+    btnClose.addEventListener("click", function () {
+      document.body.classList.remove("searchExpand");
+    });
+  }
   var dimmed = document.querySelector("#layoutDimmed");
-  handleDimmed(dimmed, document.body, "searchExpand");
+  if (dimmed) handleDimmed(dimmed, document.body, "searchExpand");
 }
 
 function handleDimmed(target, element, className) {
