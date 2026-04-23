@@ -1,0 +1,171 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/vibetest.css)-->
+
+<div class="vt-wrap">
+  <section class="vt-hero active test-form" id="q1">
+    <div class="vt-hero__inner">
+      <div class="q_num">
+        <p>Q1</p>
+      </div>
+      <h2>
+        이번 주말, 훌쩍 야외로 떠나고 싶어진 <br class="show-m" />가장 큰
+        이유는?
+      </h2>
+
+      <ul class="options">
+        <li data-next="q2">
+          <p>
+            A. 답답한 일상을 벗어나 <br />
+            탁 트인 개방감과 에너지를 듬뿍 느끼고 싶어서
+          </p>
+        </li>
+        <li data-next="q2">
+          <p>
+            B. 따뜻한 햇살 아래서 <br />
+            뽀송뽀송하게 광합성하며 힐링하려고
+          </p>
+        </li>
+        <li data-next="q2">
+          <p>
+            C. 기분 좋은 바람결에 <br />
+            복잡한 머릿속을 차분하게 비우고 싶어서
+          </p>
+        </li>
+        <li data-next="q2">
+          <p>
+            D. 북적이는 인파를 피해 <br />
+            온전히 나만의 고요한 무드를 즐기려고
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="vt-hero test-form" id="q2">
+    <div class="vt-hero__inner">
+      <div class="q_num">
+        <p>Q2</p>
+      </div>
+      <h2>드디어 목적지 도착! 가장 먼저 시선이 머무는 곳은?</h2>
+
+      <ul class="options">
+        <li data-next="q3">
+          <p>A. 눈부시게 반짝이며 끊임없이 움직이는 생동감 넘치는 풍경 너머</p>
+        </li>
+        <li data-next="q3">
+          <p>B. 발밑에 닿는 폭신하고 싱그러운 자연의 기분 좋은 감촉</p>
+        </li>
+        <li data-next="q3">
+          <p>C. 내가 좋아하는 소품들로 완벽하게 세팅된 우리만의 아늑한 구역</p>
+        </li>
+        <li data-next="q3">
+          <p>D. 시시각각 변하는 하늘의 색감과 점차 짙어지는 그림자</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="vt-hero test-form" id="q3">
+    <div class="vt-hero__inner">
+      <div class="q_num">
+        <p>Q3</p>
+      </div>
+      <h2>지금 이 공간을 가득 채우고 있는 가장 기분 좋은 소리는?</h2>
+
+      <ul class="options">
+        <li data-next="q4">
+          <p>A. 사람들의 경쾌한 웃음소리와 텐션을 올려주는 신나는 음악</p>
+        </li>
+        <li data-next="q4">
+          <p>B. 잎사귀가 스치는 소리와 어딘가에서 들려오는 자연의 소리</p>
+        </li>
+        <li data-next="q4">
+          <p>C. 적당한 백색소음과 함께 나누는 우리들의 소소한 대화 소리</p>
+        </li>
+        <li data-next="q4">
+          <p>D. 타닥타닥 타들어가는 소리 혹은 묵직하게 깔린 잔잔한 음악</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="vt-hero test-form" id="q4">
+    <div class="vt-hero__inner">
+      <div class="q_num">
+        <p>Q4</p>
+      </div>
+      <h2>오늘 하루를 사진 한 장으로 남긴다면, 어떤 무드의 필터가 어울릴까?</h2>
+
+      <ul class="options">
+        <li data-next="result">
+          <p>
+            A. 강렬하고 채도가 높아서 보기만 해도 핫한 에너지가 전해지는 필터
+          </p>
+        </li>
+        <li data-next="result">
+          <p>B. 청량함 한도 초과! 답답함이 싹 씻겨 내려가는 맑고 시원한 필터</p>
+        </li>
+        <li data-next="result">
+          <p>C. 동화 속 한 장면처럼 따뜻하고 사랑스러운 파스텔 톤 필터</p>
+        </li>
+        <li data-next="result">
+          <p>D. 대비가 짙고 분위기 있는, 영화 속 한 장면 같은 빈티지 필터</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var logo = document.querySelector(".logo img");
+    if (logo) {
+      logo.src =
+        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/logo_w.png";
+    }
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // ✅ 추가: 질문별 답변 → 색깔 매핑표
+    var scoreMap = {
+      q1: { A: "red", B: "beige", C: "green", D: "charcoal" },
+      q2: { A: "blue", B: "green", C: "beige", D: "charcoal" },
+      q3: { A: "red", B: "olive", C: "beige", D: "charcoal" },
+      q4: { A: "red", B: "blue", C: "olive", D: "charcoal" },
+    };
+
+    $(".options li").on("click", function () {
+      var currentPanel = $(this).closest(".vt-hero");
+      var nextPanelId = $(this).data("next");
+      var nextPanel = $("#" + nextPanelId);
+
+      // ✅ 추가: 현재 질문 ID + 선택 알파벳으로 색깔 꺼내서 저장
+      var currentQId = currentPanel.attr("id"); // "q1", "q2", "q3", "q4"
+      var answerLetter = $(this).find("p").text().trim()[0]; // "A", "B", "C", "D"
+      var colorPick = scoreMap[currentQId][answerLetter]; // "red", "beige" 등
+
+      var answers = JSON.parse(sessionStorage.getItem("tablerAnswers") || "[]");
+      answers.push(colorPick);
+      sessionStorage.setItem("tablerAnswers", JSON.stringify(answers));
+
+      // 기존 코드 그대로
+      if (nextPanelId === "result") {
+        window.location.href = "vibe-test-result.html";
+        return;
+      }
+
+      currentPanel.removeClass("active").addClass("passed");
+      nextPanel.addClass("active");
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var logo = document.querySelector(".logo img");
+    if (logo) logo.src = "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/logo_w.png";
+  });
+</script>

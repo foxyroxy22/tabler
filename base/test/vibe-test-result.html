@@ -1,0 +1,134 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/vibetest.css)-->
+
+<div class="vt-wrap">
+  <section class="vt-hero">
+    <div class="vt-hero__inner">
+      <h1 class="vt-hero__title" id="vt-subtit">your tabler color is ..</h1>
+      <h1 class="vt-hero__title vt-result-color" id="result-color-name">—</h1>
+
+      <div class="rec-prd">
+        <a href="#" class="rec-prd__img" id="result-img-link">
+          <img id="result-img" src="" alt="" />
+        </a>
+        <p class="vt-hero__sub" id="result-vibe-title"></p>
+        <p class="desc" id="result-desc"></p>
+      </div>
+
+      <a
+        href="https://tabler-tabler.com/test/vibe-test.html"
+        class="vt-hero__btn btn btn-sm"
+        id="btn-retry"
+      >
+        다시 테스트하기
+      </a>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var logo = document.querySelector(".logo img");
+    if (logo) {
+      logo.src =
+        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/logo_w.png";
+    }
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // ── 1. RESULT DATA ───────────────────────────────────────────────
+    var results = {
+      beige: {
+        label: "BEIGE",
+        title: "계절을 온몸으로 느끼는 타입",
+        desc: "서두르지 않아도 괜찮아요. 바람이 불고 낙엽이 지는 그 자리에 베이지 테블러와 함께 조용히 앉아보세요.",
+        img: "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_beige_hover.jpg",
+        link: "https://tabler-tabler.com/product/%ED%85%8C%EB%B8%94%EB%9F%AC-%EB%B2%A0%EC%9D%B4%EC%A7%80/27/category/53/display/1/",
+      },
+      olive: {
+        label: "OLIVE",
+        title: "소풍 하나도 완벽하게 준비하는 타입",
+        desc: "자리 깔고, 세팅하고, 딱 맞는 날씨를 기다릴 줄 아는 당신. 올리브 테블러와 함께 그 설레는 하루를 펼쳐보세요.",
+        img: "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_olive_hover.jpg",
+        link: "https://tabler-tabler.com/product/%ED%85%8C%EB%B8%94%EB%9F%AC-%EC%B9%B4%ED%82%A4/28/category/53/display/1/",
+      },
+      green: {
+        label: "GREEN",
+        title: "자연이 충전소인 타입",
+        desc: "빽빽한 나무 사이로 바람이 지나가면 그걸로 충분한 당신. 그린 테블러와 함께 그 공기 속에 잠깐 머물러 보세요.",
+        img: "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_green_hover.jpg",
+        link: "https://tabler-tabler.com/product/%ED%85%8C%EB%B8%94%EB%9F%AC-%EA%B7%B8%EB%A6%B0/26/category/53/display/1/",
+      },
+      red: {
+        label: "RED",
+        title: "신나면 일단 뛰어드는 타입",
+        desc: "계획 같은 건 없어도 괜찮아요. 그냥 오늘이 좋고, 지금이 신나면 그걸로 충분한 당신. 레드 테블러와 함께 그 텐션 그대로 달려보세요.",
+        img: "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_red_hover.jpg",
+        link: "https://tabler-tabler.com/product/%ED%85%8C%EB%B8%94%EB%9F%AC-%EB%A0%88%EB%93%9C/25/category/53/display/1/",
+      },
+      blue: {
+        label: "BLUE",
+        title: "여름을 가장 시끄럽게 즐기는 타입",
+        desc: "뜨거울수록 더 신나는 당신이라면, 블루 테블러를 옆에 두고 이 여름 한복판으로 뛰어들어 보세요.",
+        img: "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_blue_hover.jpg",
+        link: "https://tabler-tabler.com/product/%ED%85%8C%EB%B8%94%EB%9F%AC-%EB%B8%94%EB%A3%A8/30/category/53/display/1/",
+      },
+      black: {
+        label: "BLACK",
+        title: "밤이 깊어질수록 편안해지는 타입",
+        desc: "불빛 하나, 고요한 어둠, 아무 말 없이도 꽉 찬 시간. 차콜 테블러와 함께 그 깊은 밤 속으로 들어가 보세요.",
+        img: "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_black_hover.jpg",
+        link: "https://tabler-tabler.com/product/%ED%85%8C%EB%B8%94%EB%9F%AC-%EB%B8%94%EB%9E%99/29/category/53/display/1/",
+      },
+    };
+
+    // ── 2. CALCULATE RESULT (색깔 직접 매핑 방식) ────────────────────
+    function getTablerResult() {
+      var answers = JSON.parse(sessionStorage.getItem("tablerAnswers") || "[]");
+      var count = {
+        red: 0,
+        blue: 0,
+        green: 0,
+        beige: 0,
+        olive: 0,
+        black: 0,
+      };
+
+      $.each(answers, function (i, color) {
+        if (count[color] !== undefined) count[color]++;
+      });
+
+      var sorted = Object.entries(count).sort(function (a, b) {
+        return b[1] - a[1];
+      });
+
+      return sorted[0][0];
+    }
+
+    // ── 3. RENDER ────────────────────────────────────────────────────
+    var color = getTablerResult();
+    var data = results[color];
+
+    $(".vt-wrap").addClass("theme-" + color);
+    $("#result-color-name").text(data.label);
+    $("#result-vibe-title").text(data.title);
+    $("#result-desc").text(data.desc);
+    $("#result-img").attr({ src: data.img, alt: "TABLER " + data.label });
+    $("#result-img-link").attr("href", data.link);
+
+    // ── 4. RETRY ─────────────────────────────────────────────────────
+    $("#btn-retry").on("click", function () {
+      sessionStorage.removeItem("tablerAnswers");
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var logo = document.querySelector(".logo img");
+    if (logo) logo.src = "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/logo_w.png";
+  });
+</script>
