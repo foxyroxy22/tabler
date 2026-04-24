@@ -1,0 +1,647 @@
+@charset "utf-8";
+
+/* ========================
+   How To Use Page (howto.css)
+   ======================== */
+
+/* ========================
+   Hero
+   ======================== */
+.htu-hero {
+  background-color: #101010;
+  border-top: 1px solid #101010;
+  padding: 50px var(--gutter) 60px;
+}
+
+.htu-hero__label {
+  display: block;
+  font-family: var(--font-main);
+  font-size: var(--fs-p5);
+  font-weight: var(--fw-reg);
+  line-height: 1.5;
+  color: #edff9e;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.htu-hero__title {
+  font-family: var(--font-point);
+  font-size: var(--fs-h1);
+  line-height: 1.1;
+  margin: 0 0 20px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.htu-hero__title .yellow {
+  color: #edff9e;
+}
+
+.htu-hero__sub {
+  font-family: var(--font-main);
+  font-size: var(--fs-p5);
+  font-weight: var(--fw-reg);
+  line-height: 1.5;
+  color: #fff;
+  margin: 0;
+}
+
+/* ========================
+   Shared: Section Label
+   ======================== */
+.htu-label {
+  display: inline-block;
+  border: 1px solid #101010;
+  padding: 8px 10px 6px;
+  background-color: #edff9e;
+  font-family: var(--font-point);
+  font-size: var(--fs-p7);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* ========================
+   01 — READY IN 3 SECONDS
+   ======================== */
+.htu-setup {
+  background-color: #edff9e;
+  border-top: 1px solid #101010;
+  padding: 50px var(--gutter) 80px;
+}
+
+.htu-setup__header {
+  margin-bottom: 30px;
+}
+
+.htu-setup__title {
+  font-family: var(--font-point);
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+  color: #101010;
+}
+
+.htu-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.htu-step {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.htu-step--dark {
+  background-color: #101010;
+}
+
+.htu-step--light {
+  background-color: #fff;
+  border: 1px solid #101010;
+}
+
+.htu-step__num {
+  display: block;
+  font-family: var(--font-point);
+  font-size: var(--fs-h1);
+  line-height: 1.1;
+}
+
+.htu-step--dark .htu-step__num {
+  color: #edff9e;
+}
+
+.htu-step--light .htu-step__num {
+  color: #101010;
+}
+
+.htu-step__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+  background-color: #1e1e1e;
+}
+
+.htu-step--light .htu-step__img {
+  background-color: #eee;
+}
+
+.htu-step__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.htu-step__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.htu-step__name {
+  font-family: var(--font-main);
+  font-weight: var(--fw-sb);
+  font-size: var(--fs-p4);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.htu-step--dark .htu-step__name {
+  color: #fff;
+}
+
+.htu-step--light .htu-step__name {
+  color: #101010;
+}
+
+.htu-step__desc {
+  font-family: var(--font-main);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-p5);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.htu-step--dark .htu-step__desc {
+  color: #fff;
+}
+
+.htu-step--light .htu-step__desc {
+  color: #101010;
+}
+
+/* ========================
+   02 — DETAILS IN THE WILD
+   ======================== */
+.htu-details {
+  border-top: 1px solid #101010;
+}
+
+.htu-details__header {
+  padding: 50px var(--gutter) 0;
+}
+
+.htu-details__title {
+  font-family: var(--font-point);
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+  color: #101010;
+}
+
+.htu-feature-list {
+  padding-bottom: 50px;
+}
+
+.htu-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+  padding: 0 var(--gutter);
+}
+
+.htu-feature__img {
+  overflow: hidden;
+  position: relative;
+  background-color: #d8d8d4;
+  min-height: 400px;
+}
+
+.htu-feature__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.htu-feature__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 0 50px var(--gutter);
+  gap: 20px;
+}
+
+.htu-feature--rev .htu-feature__text {
+  padding: 50px var(--gutter) 50px 0;
+}
+
+.htu-feature--rev .htu-feature__img {
+  order: 1;
+}
+
+.htu-feature__title {
+  font-family: var(--font-main);
+  font-weight: var(--fw-sb);
+  font-size: var(--fs-p4);
+  line-height: 1.5;
+  margin: 0;
+  color: #101010;
+}
+
+.htu-feature__desc {
+  font-family: var(--font-main);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-p6);
+  line-height: 1.6;
+  margin: 0;
+  color: #101010;
+}
+
+/* ========================
+   03 — CAPACITY
+   ======================== */
+.htu-capacity {
+  background-color: #101010;
+  border-top: 1px solid #101010;
+  padding: 50px var(--gutter) 80px;
+}
+
+.htu-capacity__header {
+  margin-bottom: 30px;
+}
+
+.htu-capacity__title {
+  font-family: var(--font-point);
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.htu-capacity__title .yellow {
+  color: #edff9e;
+}
+
+.htu-capacity-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.htu-capacity-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.htu-capacity-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.htu-capacity-card--yellow {
+  background-color: #edff9e;
+}
+
+.htu-capacity-card__icon {
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.htu-capacity-card__icon img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+.htu-capacity-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.htu-capacity-card__title {
+  font-family: var(--font-main);
+  font-weight: var(--fw-sb);
+  font-size: var(--fs-p5);
+  line-height: 1.5;
+  margin: 0;
+  color: #101010;
+}
+
+.htu-capacity-card--yellow .htu-capacity-card__title {
+  color: #101010;
+}
+
+.htu-capacity-card--dark .htu-capacity-card__title {
+  color: #fff;
+}
+
+.htu-capacity-card__desc {
+  font-family: var(--font-main);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-p6);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.htu-capacity-card--yellow .htu-capacity-card__desc {
+  color: #101010;
+}
+
+.htu-capacity-card--dark .htu-capacity-card__desc {
+  color: #fff;
+}
+
+.htu-capacity-card__inner {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.htu-capacity-card__emoji {
+  font-size: var(--fs-p2);
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.htu-capacity-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ========================
+   04 — KEEP YOUR TEMPERATURE
+   ======================== */
+.htu-insulation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #101010;
+  min-height: 600px;
+}
+
+.htu-insulation__img {
+  background-color: #d8d8d4;
+  position: relative;
+  overflow: hidden;
+}
+
+.htu-insulation__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.htu-insulation__content {
+  padding: 50px var(--gutter);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.htu-insulation__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.htu-insulation__title {
+  font-family: var(--font-point);
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+  color: #101010;
+}
+
+.htu-insulation__desc {
+  font-family: var(--font-main);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-p6);
+  line-height: 1.6;
+  margin: 0;
+  color: #101010;
+}
+
+.htu-insulation__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.htu-stat {
+  background-color: #101010;
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.htu-stat__num {
+  font-family: var(--font-point);
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  color: #edff9e;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.htu-stat__title {
+  font-family: var(--font-main);
+  font-weight: var(--fw-sb);
+  font-size: var(--fs-p5);
+  line-height: 1.5;
+  margin: 0;
+  color: #fff;
+}
+
+.htu-stat__desc {
+  font-family: var(--font-main);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-p6);
+  line-height: 1.6;
+  margin: 0;
+  color: #fff;
+}
+
+/* ========================
+   CTA — READY TO TABLER?
+   ======================== */
+.htu-cta {
+  background-color: #101010;
+  border-top: 1px solid #101010;
+  padding: 50px var(--gutter);
+  text-align: center;
+}
+
+.htu-cta__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.htu-cta__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.htu-cta__title {
+  font-family: var(--font-point);
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.htu-cta__sub {
+  font-family: var(--font-main);
+  font-weight: var(--fw-sb);
+  font-size: var(--fs-p4);
+  line-height: 1.5;
+  margin: 0;
+  color: #fff;
+}
+
+.htu-cta__desc {
+  font-family: var(--font-main);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-p5);
+  line-height: 1.5;
+  margin: 0;
+  color: #fff;
+}
+
+.htu-cta__btns {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Button styles */
+.htu-btn {
+  display: inline-block;
+  font-family: var(--font-main);
+  font-weight: var(--fw-sb);
+  font-size: var(--fs-p7);
+  border: 1px solid #101010;
+  border-radius: 40px;
+  padding: 0 20px;
+  height: 32px;
+  line-height: 32px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.htu-btn--primary {
+  background-color: #edff9e;
+  color: #101010;
+  box-shadow: 3px 3px 0px #fff;
+}
+
+.htu-btn--primary:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 #fff;
+}
+
+.htu-btn--secondary {
+  background-color: #fff9f2;
+  color: #101010;
+  box-shadow: 3px 3px 0px #edff9e;
+}
+
+.htu-btn--secondary:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 #edff9e;
+}
+
+/* ========================
+   Responsive — Tablet (≤1024px)
+   ======================== */
+@media (max-width: 1024px) {
+  .htu-steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .htu-feature {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .htu-feature__img {
+    min-height: 320px;
+  }
+
+  .htu-feature--rev .htu-feature__img {
+    order: 0;
+  }
+
+  .htu-feature__text {
+    padding: 40px var(--gutter);
+  }
+
+  .htu-feature--rev .htu-feature__text {
+    padding: 40px var(--gutter);
+  }
+
+  .htu-insulation {
+    grid-template-columns: 1fr;
+  }
+
+  .htu-insulation__img {
+    min-height: 350px;
+  }
+
+  .htu-capacity-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive — Mobile (≤768px) */
+@media (max-width: 768px) {
+  .htu-insulation__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .htu-cta__btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .htu-feature {
+    padding: 0;
+  }
+
+  .htu-feature__text {
+    padding: 30px var(--gutter);
+  }
+
+  .htu-feature--rev .htu-feature__text {
+    padding: 30px var(--gutter);
+  }
+}
