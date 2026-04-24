@@ -258,16 +258,16 @@
 }
 
 #shopList .sort-dropdown li a {
-  display: block !important;
-  padding: 8px 24px !important;
-  font-family: var(--font-main) !important;
-  font-size: var(--fs-p6) !important;
-  color: var(--text-color, #101010) !important;
-  text-decoration: none !important;
-  text-align: center !important;
+  display: block;
+  padding: 0px 24px;
+  font-family: var(--font-main);
+  font-size: var(--fs-p6);
+  color: var(--text-color, #101010);
+  text-decoration: none;
+  text-align: center;
   transition: background 0.15s;
-  white-space: nowrap !important;
-  background: transparent !important;
+  white-space: nowrap;
+  background: transparent;
 }
 
 #shopList .sort-dropdown li a:hover {
@@ -420,11 +420,19 @@
   .ec-base-product .prdList {
     grid-template-columns: repeat(2, 1fr);
   }
+  .ec-base-product .prdList > li {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* Mobile: 1 column */
 @media all and (max-width: 767px) {
   .ec-base-product .prdList {
     grid-template-columns: 1fr;
+  }
+  .ec-base-product .prdList > li {
+    display: block;
+    width: 100%;
   }
 }

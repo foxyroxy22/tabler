@@ -6,28 +6,9 @@ window.addEventListener("load", function () {
   //toggleClass('.xans-layout-info.info__customer', '.xans-layout-info.info__customer .toggle', 'selected'); 사용안함 210805 서정환 수정
   //topBanner(); 사용안함 210804 서정환 수정
   handleScroll();
-  handleSidebar();
+  // handleSidebar() removed — slide_menu.js handles sidebar
 });
 
-function handleSidebar() {
-  var ham = document.querySelector(".ham");
-  var sidebar = document.getElementById("sidebar");
-  if (!ham || !sidebar) return;
-
-  ham.addEventListener("click", function () {
-    var isOpen = sidebar.classList.toggle("active");
-    ham.classList.toggle("is-open", isOpen);
-    document.body.style.overflow = isOpen ? "hidden" : "";
-  });
-
-  sidebar.addEventListener("click", function (e) {
-    if (e.target === sidebar) {
-      sidebar.classList.remove("active");
-      ham.classList.remove("is-open");
-      document.body.style.overflow = "";
-    }
-  });
-}
 
 function handleScroll() {
   var scrollPosition = 0;
@@ -117,7 +98,6 @@ function handleDimmed(target, element, className) {
     element.classList.remove(className);
   });
 }
-
 
 function getOffset(element) {
   if (!element.getClientRects().length) {

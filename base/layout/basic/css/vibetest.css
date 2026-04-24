@@ -154,21 +154,11 @@ br.show-m {
   padding: 60px 0 80px;
 }
 
-/* Infinite scroll animation */
-@keyframes vt-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 
 .vt-track {
   display: flex;
-  /* no gap — use margin-right on each box so -50% lands exactly on the duplicate */
   width: max-content;
-  animation: vt-scroll 18s linear infinite;
+  will-change: transform;
 }
 
 /* ========================

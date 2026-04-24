@@ -246,10 +246,6 @@
     margin: 40px 0 20px;
     font-size: 16px;
   }
-  .ec-base-product ul.grid4 > li {
-    width: 50%;
-  }
-
   .ec-base-product .discountPeriod {
     position: static;
   }
@@ -267,9 +263,6 @@
 /********************* Tablet *********************/
 @media all and (min-width: 768px) and (max-width: 1024px) {
   .ec-base-product ul.grid5 > li {
-    width: 33.33%;
-  }
-  .ec-base-product ul.grid4 > li {
     width: 33.33%;
   }
 }

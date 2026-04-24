@@ -19,6 +19,84 @@ function removePagingArea(oTarget)
 
 $(function() {
 
+    // Move product detail content into the left column
+    var $prdDetail = $('#prdDetail');
+    var $pdpLeft = $('.pdp-col-left');
+    if ($prdDetail.length && $pdpLeft.length) {
+        $pdpLeft.append($prdDetail);
+    }
+
+    // Sticky right column — JS-based because position:sticky is broken by Cafe24's ancestor overflow:hidden
+    (function() {
+        if ($(window).width() < 1025) return;
+
+        var $right  = $('.pdp-col-right');
+        var $left   = $('.pdp-col-left');
+        if (!$right.length || !$left.length) return;
+
+        // Measure original position ONCE (after #prdDetail has been moved above)
+        var origTop  = $right.offset().top;
+        var origLeft = $right.offset().left;
+        var origW    = $right.outerWidth();
+        var GAP      = 20; // px from viewport top when stuck
+
+        // Insert invisible spacer so flex layout doesn't collapse when right col is fixed
+        var $spacer = $('<div class="pdp-right-spacer">').css({
+            width: origW,
+            flexShrink: 0,
+            display: 'none'
+        }).insertAfter($right);
+
+        function update() {
+            var st = $(window).scrollTop();
+            var leftBottom = $left.offset().top + $left.outerHeight();
+
+            if (st >= origTop - GAP) {
+                // Stop when the bottom of the left column is reached
+                var rightH = $right.outerHeight();
+                if (st + GAP + rightH >= leftBottom) {
+                    // Absolute-pin to bottom of left col
+                    $right.css({
+                        position: 'absolute',
+                        top:  ($left.outerHeight() - rightH) + 'px',
+                        left: origLeft - $left.offset().left + 'px',
+                        width: origW + 'px'
+                    });
+                    $left.parent().css('position', 'relative');
+                } else {
+                    // Fixed to viewport
+                    $right.css({
+                        position: 'fixed',
+                        top:  GAP + 'px',
+                        left: origLeft + 'px',
+                        width: origW + 'px'
+                    });
+                    $left.parent().css('position', '');
+                }
+                $spacer.show();
+            } else {
+                $right.css({ position: '', top: '', left: '', width: '' });
+                $left.parent().css('position', '');
+                $spacer.hide();
+            }
+        }
+
+        $(window).on('scroll.pdpRight', update);
+        $(window).on('resize.pdpRight', function() {
+            // Recapture after resize
+            $right.css({ position: '', top: '', left: '', width: '' });
+            $spacer.hide();
+            origTop  = $right.offset().top;
+            origLeft = $right.offset().left;
+            origW    = $right.outerWidth();
+            $spacer.css('width', origW);
+            update();
+        });
+
+        update();
+    }());
+
+
     $('#actionCartClone, #actionWishClone, #actionBuyClone, #actionWishSoldoutClone').off().on('click', function() {
         try {
             var id = $(this).attr('id').replace(/Clone/g, '');

@@ -12,7 +12,7 @@ jQuery(document).ready(function () {
         '<img src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/icon_red.svg" width="28" height="28" />',
       tabColor: "#FFAFB4",
       imgSrc:
-        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_red.png",
+        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_clean_red.png",
       bgColor: "#FF0026",
       bgImgSrc:
         "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_red.png",
@@ -28,7 +28,7 @@ jQuery(document).ready(function () {
         '<img src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/icon_green.svg" width="28" height="28" />',
       tabColor: "#5CCDB2",
       imgSrc:
-        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_green.png",
+        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_clean_green.png",
       bgColor: "#00B38F",
       bgImgSrc:
         "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_green.png",
@@ -44,7 +44,7 @@ jQuery(document).ready(function () {
         '<img src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/icon_olive.svg" width="28" height="28" />',
       tabColor: "#F4FDBF",
       imgSrc:
-        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_olive.png",
+        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_clean_olive.png",
       bgColor: "#EDFF9E",
       bgImgSrc:
         "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_olive.png",
@@ -60,7 +60,7 @@ jQuery(document).ready(function () {
         '<img src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/icon_blue.svg" width="28" height="28" />',
       tabColor: "#99B5F7",
       imgSrc:
-        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_blue.png",
+        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_clean_blue.png",
       bgColor: "#0051FF",
       bgImgSrc:
         "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_blue.png",
@@ -76,7 +76,7 @@ jQuery(document).ready(function () {
         '<img src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/icon_black.svg" width="28" height="28" />',
       tabColor: "#FFAFB4",
       imgSrc:
-        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_black.png",
+        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_clean_black.png",
       bgColor: "#FF748C",
       bgImgSrc:
         "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_black.png",
@@ -92,7 +92,7 @@ jQuery(document).ready(function () {
         '<img src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/icon_beige.svg" width="28" height="28" />',
       tabColor: "#99EEF4",
       imgSrc:
-        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_beige.png",
+        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_clean_beige.png",
       bgColor: "#00DFF8",
       bgImgSrc:
         "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_beige.png",

@@ -4,6 +4,52 @@
 <!--@css(/layout/basic/css/main.css)-->
 <!--@css(/layout/basic/css/custom.css)-->
 
+<style>
+  .main_image_text_gallery .gallery_item > a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+  }
+  .main_image_text_gallery .gallery_item > a .img-default,
+  .main_image_text_gallery .gallery_item > a .img-hover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.55s ease;
+    margin: 0;
+    padding: 0;
+  }
+  .main_image_text_gallery .gallery_item > a .img-hover {
+    opacity: 0;
+  }
+  .main_image_text_gallery .gallery_item > a:hover .img-default,
+  .main_image_text_gallery .gallery_item.is-active > a .img-default {
+    opacity: 0;
+  }
+  .main_image_text_gallery .gallery_item > a:hover .img-hover,
+  .main_image_text_gallery .gallery_item.is-active > a .img-hover {
+    opacity: 1;
+  }
+  .main_image_text_gallery .gallery_item_info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    text-align: center;
+    padding: 50px 0;
+  }
+  .main_image_text_gallery .gallery_item_name {
+    font-size: var(--fs-p4);
+  }
+</style>
+
 <script>
   document.body.classList.add("page-index");
 </script>
@@ -95,7 +141,11 @@
         </div>
 
         <!-- 전체보기 -->
-        <a href="/product/list/all" class="view-all">제품 전체 보기</a>
+        <a
+          href="https://tabler-tabler.com/category/%EC%A0%84%EC%B2%B4/53/"
+          class="view-all"
+          >제품 전체 보기</a
+        >
       </div>
     </div>
   </div>
@@ -116,7 +166,11 @@
     <div class="gallery_title_desc fs-p5" data-ez-role="desc">
       테블러에서 전개하는 다양한 컬러 컬렉션을 만나보세요.
     </div>
-    <a href="#" class="gallery_title_btn btn btn-md">전체 상품 보기</a>
+    <a
+      href="https://tabler-tabler.com/category/전체/53/"
+      class="gallery_title_btn btn btn-md"
+      >전체 상품 보기</a
+    >
   </div>
 
   <!-- 슬라이드 -->
@@ -135,23 +189,27 @@
           data-bg-img="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_red.png"
         >
           <a
+            class="img-wrap"
             data-ez-role="a"
             href="https://tabler-tabler.com/surl/P/25"
             target="_self"
           >
-            <div class="gallery_card_bg"></div>
-            <div class="gallery_card_bg_img"></div>
+            <img
+              class="img-default"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/product/medium/20260324/c844f219f27ea2d2743b8e09e94e1b6e.jpg"
+              loading="lazy"
+              alt="테블러 레드"
+            />
+            <img
+              class="img-hover"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_red_hover.jpg"
+              loading="lazy"
+              alt=""
+            />
             <div class="gallery_item_info">
               <div class="gallery_item_name" data-ez-role="title">
                 테블러 레드
               </div>
-            </div>
-            <div class="gallery_img_wrap">
-              <img
-                src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_red.png"
-                loading="lazy"
-                alt="테블러 레드"
-              />
             </div>
           </a>
         </li>
@@ -163,23 +221,27 @@
           data-bg-img="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_blue.png"
         >
           <a
+            class="img-wrap"
             data-ez-role="a"
             href="https://tabler-tabler.com/surl/P/30"
             target="_self"
           >
-            <div class="gallery_card_bg"></div>
-            <div class="gallery_card_bg_img"></div>
+            <img
+              class="img-default"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/product/medium/20260423/7a8623f9fdd598484879f248535a6054.jpg"
+              loading="lazy"
+              alt="테블러 블루"
+            />
+            <img
+              class="img-hover"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_blue_hover.jpg"
+              loading="lazy"
+              alt=""
+            />
             <div class="gallery_item_info">
               <div class="gallery_item_name" data-ez-role="title">
                 테블러 블루
               </div>
-            </div>
-            <div class="gallery_img_wrap">
-              <img
-                src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_blue.png"
-                loading="lazy"
-                alt="테블러 블루"
-              />
             </div>
           </a>
         </li>
@@ -191,23 +253,27 @@
           data-bg-img="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_green.png"
         >
           <a
+            class="img-wrap"
             data-ez-role="a"
             href="https://tabler-tabler.com/surl/P/26"
             target="_self"
           >
-            <div class="gallery_card_bg"></div>
-            <div class="gallery_card_bg_img"></div>
+            <img
+              class="img-default"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/product/medium/20260324/8ca335c758fb6a9ae2edbbe2a8089ed5.jpg"
+              loading="lazy"
+              alt="테블러 그린"
+            />
+            <img
+              class="img-hover"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_green_hover.jpg"
+              loading="lazy"
+              alt=""
+            />
             <div class="gallery_item_info">
               <div class="gallery_item_name" data-ez-role="title">
                 테블러 그린
               </div>
-            </div>
-            <div class="gallery_img_wrap">
-              <img
-                src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_green.png"
-                loading="lazy"
-                alt="테블러 그린"
-              />
             </div>
           </a>
         </li>
@@ -219,23 +285,27 @@
           data-bg-img="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_black.png"
         >
           <a
+            class="img-wrap"
             data-ez-role="a"
             href="https://tabler-tabler.com/surl/P/29"
             target="_self"
           >
-            <div class="gallery_card_bg"></div>
-            <div class="gallery_card_bg_img"></div>
+            <img
+              class="img-default"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/product/medium/20260324/88d1266cf253daccd10ffbb96c422f5d.jpg"
+              loading="lazy"
+              alt="테블러 블랙"
+            />
+            <img
+              class="img-hover"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_black_hover.jpg"
+              loading="lazy"
+              alt=""
+            />
             <div class="gallery_item_info">
               <div class="gallery_item_name" data-ez-role="title">
                 테블러 블랙
               </div>
-            </div>
-            <div class="gallery_img_wrap">
-              <img
-                src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_black.png"
-                loading="lazy"
-                alt="테블러 블랙"
-              />
             </div>
           </a>
         </li>
@@ -247,23 +317,27 @@
           data-bg-img="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_olive.png"
         >
           <a
+            class="img-wrap"
             data-ez-role="a"
             href="https://tabler-tabler.com/surl/P/28"
             target="_self"
           >
-            <div class="gallery_card_bg"></div>
-            <div class="gallery_card_bg_img"></div>
+            <img
+              class="img-default"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/product/medium/20260324/f353feb02de55263efd8aaee8f002e18.jpg"
+              loading="lazy"
+              alt="테블러 올리브"
+            />
+            <img
+              class="img-hover"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_olive_hover.jpg"
+              loading="lazy"
+              alt=""
+            />
             <div class="gallery_item_info">
               <div class="gallery_item_name" data-ez-role="title">
                 테블러 올리브
               </div>
-            </div>
-            <div class="gallery_img_wrap">
-              <img
-                src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_olive.png"
-                loading="lazy"
-                alt="테블러 올리브"
-              />
             </div>
           </a>
         </li>
@@ -275,23 +349,27 @@
           data-bg-img="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/hero_beige.png"
         >
           <a
+            class="img-wrap"
             data-ez-role="a"
             href="https://tabler-tabler.com/surl/P/27"
             target="_self"
           >
-            <div class="gallery_card_bg"></div>
-            <div class="gallery_card_bg_img"></div>
+            <img
+              class="img-default"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/product/medium/20260324/87eb0159d1a957f6436f9df0b165ef18.jpg"
+              loading="lazy"
+              alt="테블러 베이지"
+            />
+            <img
+              class="img-hover"
+              src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_main_beige_hover.jpg"
+              loading="lazy"
+              alt=""
+            />
             <div class="gallery_item_info">
               <div class="gallery_item_name" data-ez-role="title">
                 테블러 베이지
               </div>
-            </div>
-            <div class="gallery_img_wrap">
-              <img
-                src="https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/prd_beige.png"
-                loading="lazy"
-                alt="테블러 베이지"
-              />
             </div>
           </a>
         </li>
@@ -376,9 +454,11 @@
       <div class="col-a">
         <div class="card card-text d-text-a box-shadow-5">
           <p class="card-quote fs-p5">
-            "후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기"
+            "피크닉 가서 항상 비싼 돈에 품질 나쁜 거 대여했는데, 테블러 준비해서
+            가니까 진짜 완전 편하네요! 이거 피크닉 캠핑 좋아하는 분이면 꼭
+            써보시길!!"
           </p>
-          <p class="card-author fs-p6">"이름 or 아이디"</p>
+          <p class="card-author fs-p6">"김**님(ky*******89)"</p>
         </div>
         <div class="card card-img d-img-big box-shadow-5"></div>
       </div>
@@ -388,9 +468,11 @@
         <div class="card card-img d-img-tall box-shadow-5"></div>
         <div class="card card-text d-text-c box-shadow-5">
           <p class="card-quote fs-p5">
-            "후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기"
+            "너무 안 커서 집에서도 쓰는데 펴고 접기 간단해서 그런지 아이들이랑
+            같이 넷플릭스 볼 때 자기들이 알아서 쓰네요! 캠핑 느낌도 나고
+            좋습니다."
           </p>
-          <p class="card-author fs-p6">"이름 or 아이디"</p>
+          <p class="card-author fs-p6">"전**님 (2z***ai)"</p>
         </div>
       </div>
 
@@ -398,9 +480,10 @@
       <div class="col-c">
         <div class="card card-text d-text-b box-shadow-5">
           <p class="card-quote fs-p5">
-            "후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기"
+            "주로 캠핑이랑 차박 자주 하는데, 딱 컴팩트하게 들어가네요. 요즘 날시
+            추운데 보온도 잘 되고, 이거 생기니 캠핑이 많이 달라지네요."
           </p>
-          <p class="card-author fs-p6">"이름 or 아이디"</p>
+          <p class="card-author fs-p6">"염**님 (sy**26)"</p>
         </div>
         <div class="d-img-pair">
           <div class="card card-img box-shadow-5"></div>
@@ -414,9 +497,11 @@
       <!-- 1: 텍스트 -->
       <div class="card box-shadow-3">
         <p class="card-quote fs-p5">
-          "후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기"
+          "피크닉 가서 항상 비싼 돈에 품질 나쁜 거 대여했는데, 테블러 준비해서
+          가니까 진짜 완전 편하네요! 이거 피크닉 캠핑 좋아하는 분이면 꼭
+          써보시길!!"
         </p>
-        <p class="card-author fs-p6">"이름 or 아이디"</p>
+        <p class="card-author fs-p6">"김**님(ky*******89)"</p>
       </div>
 
       <!-- 2: 이미지 -->
@@ -428,17 +513,20 @@
       <!-- 4: 텍스트 -->
       <div class="card card--text box-shadow-3">
         <p class="card-quote fs-p5">
-          "후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기"
+          "너무 안 커서 집에서도 쓰는데 펴고 접기 간단해서 그런지 아이들이랑
+          같이 넷플릭스 볼 때 자기들이 알아서 쓰네요! 캠핑 느낌도 나고
+          좋습니다."
         </p>
-        <p class="card-author">"이름 or 아이디"</p>
+        <p class="card-author fs-p6">"전**님 (2z***ai)"</p>
       </div>
 
       <!-- 5: 텍스트 -->
       <div class="card box-shadow-3">
         <p class="card-quote fs-p5">
-          "후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기후기"
+          "주로 캠핑이랑 차박 자주 하는데, 딱 컴팩트하게 들어가네요. 요즘 날시
+          추운데 보온도 잘 되고, 이거 생기니 캠핑이 많이 달라지네요."
         </p>
-        <p class="card-author fs-p6">"이름 or 아이디"</p>
+        <p class="card-author fs-p6">"염**님 (sy**26)"</p>
       </div>
 
       <!-- 6: 이미지 -->
@@ -495,11 +583,16 @@
             1분 만에 찾는 인생 테블러
           </p>
 
-          <a href="#" class="btn btn-md">바이브 테스트</a>
+          <a
+            href="https://tabler-tabler.com/test/vibe-test.html"
+            class="btn btn-md"
+            >바이브 테스트</a
+          >
         </div>
         <!-- .nintendo-screen -->
       </div>
     </div>
+
     <!-- .nintendo-wrap -->
   </div>
 </section>
@@ -509,8 +602,17 @@
   <div class="inner">
     <h3>WHERE TO FIND US</h3>
     <div class="social">
-      <a href="#" class="btn box-shadow-5 t-h2">instagram</a>
-      <a href="#" class="btn box-shadow-5 t-h2">tiktok</a>
+      <a
+        href="https://www.instagram.com/tabler.tabler_com"
+        class="btn box-shadow-5 t-h2"
+        >instagram</a
+      >
+      <a
+        href="https://www.tiktok.com/@tabler.official"
+        target="_blank"
+        class="btn box-shadow-5 t-h2"
+        >tiktok</a
+      >
       <a href="#" class="btn box-shadow-5 t-h2">spotify</a>
       <a href="#" class="btn box-shadow-5 t-h2">youtube</a>
     </div>

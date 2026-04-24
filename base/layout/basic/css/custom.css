@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-@import url("/css/font.css");
-
 /* common */
 :root {
   /* --- Font Family --- */
@@ -37,7 +35,7 @@
   --gutter: 32px;
 
   --text-color: #101010;
-  --bg-color: #fff9f2;
+  --bg-color: #ffffff;
 }
 
 /* --- Tablet Font Sizes (1024px 이하) --- */
@@ -184,7 +182,7 @@
   background: #ff0026;
   height: calc(100vh - 40px);
   width: 100%;
-  margin-top: -78px;
+  margin-top: -20px;
   position: relative;
 }
 
@@ -350,6 +348,7 @@
 }
 #hero .hero-right .color-tabs {
   display: flex;
+  align-items: stretch;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
 }
@@ -361,9 +360,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  align-self: stretch;
   cursor: pointer;
   background: transparent;
-  border-bottom: 3px solid transparent;
   transition:
     background 0.2s,
     border-color 0.2s;
@@ -457,10 +457,29 @@
   }
 }
 
+/* 랩탑: 뷰포트 높이가 낮은 데스크톱 (e.g. 1366×768, 1440×768, 1500×900) */
+@media (max-height: 860px) and (min-width: 1025px) {
+  #hero .hero-right {
+    width: 440px;
+  }
+  #hero .hero-right .panel-image-area {
+    padding: 190px 20px 25px 20px;
+    min-height: 300px;
+  }
+  #hero .hero-right .product-img {
+    height: 210px;
+  }
+  #hero .hero-right .color-tab {
+    flex: 0 0 100px;
+    width: 100px;
+    padding: 10px 14px;
+  }
+}
+
 @media (max-width: 1024px) {
   #hero {
     height: auto;
-    margin-top: -60px;
+    margin-top: -43px;
     padding-bottom: 50px;
   }
   #hero .inner {
@@ -532,7 +551,7 @@
 
 /* ── 타이틀 영역 ── */
 .main_image_text_gallery .gallery_title_wrap {
-  padding: 50px 20px 40px;
+  padding: 80px 20px 60px;
   text-align: center;
 }
 .main_image_text_gallery .gallery_title_desc {
@@ -570,97 +589,62 @@
   overflow: hidden;
   min-height: 0;
 }
+
+/* ── 이미지 래퍼: 1:1 비율 ── */
 .main_image_text_gallery .gallery_item > a {
   display: block;
   text-decoration: none;
   color: inherit;
   position: relative;
-  isolation: isolate;
   overflow: hidden;
-  padding: 70px 0 50px;
-  height: 100%;
-}
-@media (max-width: 768px) {
-  .main_image_text_gallery .gallery_item > a {
-    padding: 50px 0 30px;
-  }
+  aspect-ratio: 1 / 1;
 }
 
-/* ── 배경 레이어 1: 배경색 ── */
-.main_image_text_gallery .gallery_card_bg {
+/* ── 기본/호버 이미지 공통 ── */
+.main_image_text_gallery .gallery_item > a .img-default,
+.main_image_text_gallery .gallery_item > a .img-hover {
   position: absolute;
   inset: 0;
-  z-index: 0;
-  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: opacity 0.55s ease;
 }
-.main_image_text_gallery .gallery_item > a:hover .gallery_card_bg,
-.main_image_text_gallery .gallery_item.is-active > a .gallery_card_bg {
-  opacity: 1;
-}
 
-/* ── 배경 레이어 2: 배경 PNG (zoom in/out) ── */
-.main_image_text_gallery .gallery_card_bg_img {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* 기본 상태: hover 이미지 숨김 */
+.main_image_text_gallery .gallery_item > a .img-hover {
   opacity: 0;
-  transform: scale(1.12);
-  transform-origin: center center;
-  transition:
-    opacity 0.55s ease,
-    transform 0.55s ease;
-}
-/* hover: PNG 나타남, scale 고정 */
-.main_image_text_gallery .gallery_item > a:hover .gallery_card_bg_img {
-  opacity: 1;
-  transform: scale(1.12);
-}
-/* is-active: zoom in */
-.main_image_text_gallery .gallery_item.is-active > a .gallery_card_bg_img {
-  opacity: 1;
-  transform: scale(1);
-}
-/* is-active + hover: active 상태 유지 */
-.main_image_text_gallery
-  .gallery_item.is-active
-  > a:hover
-  .gallery_card_bg_img {
-  opacity: 1;
-  transform: scale(1);
 }
 
-/* ── 상품 이미지: 카드 너비의 60%, 비율 유지, 중앙정렬 ── */
-.main_image_text_gallery .gallery_img_wrap {
-  position: relative;
-  z-index: 2;
-  width: 60%;
-  margin: 0 auto;
+/* hover: 이미지 교체 */
+.main_image_text_gallery .gallery_item > a:hover .img-default {
+  opacity: 0;
 }
-@media (max-width: 1600px) {
-  .main_image_text_gallery .gallery_img_wrap {
-    width: 70%;
-  }
+.main_image_text_gallery .gallery_item > a:hover .img-hover {
+  opacity: 1;
 }
 
-.main_image_text_gallery .gallery_img_wrap img {
-  width: 100%;
-  height: auto;
-  display: block;
+/* is-active (centered): hover 이미지 표시 */
+.main_image_text_gallery .gallery_item.is-active > a .img-default {
+  opacity: 0;
+}
+.main_image_text_gallery .gallery_item.is-active > a .img-hover {
+  opacity: 1;
 }
 
-/* ── 상품 정보 텍스트 ── */
+/* ── 상품 정보 텍스트 (하단 오버레이) ── */
 .main_image_text_gallery .gallery_item_info {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
   text-align: center;
-  margin-bottom: 50px;
+  padding: 24px 0 16px;
 }
 .main_image_text_gallery .gallery_item_name {
   font-size: var(--fs-p4);
+  color: #fff;
 }
 
 /* ── NAV 버튼 ── */
@@ -735,6 +719,7 @@
   border-radius: 20px;
   overflow: hidden;
   padding: 20px;
+  font-family: Pretendard, sans-serif;
 }
 #review .card-text {
   padding: 20px;

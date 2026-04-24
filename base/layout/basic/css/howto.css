@@ -11,6 +11,7 @@
   background-color: #101010;
   border-top: 1px solid #101010;
   padding: 50px var(--gutter) 60px;
+  text-align: center;
 }
 
 .htu-hero__label {
@@ -51,6 +52,7 @@
    ======================== */
 .htu-label {
   display: inline-block;
+  align-self: flex-start;
   border: 1px solid #101010;
   padding: 8px 10px 6px;
   background-color: #edff9e;
@@ -312,9 +314,33 @@
 }
 
 .htu-capacity-card__icon {
-  height: 48px;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.htu-capacity-card__num {
+  font-family: var(--font-point);
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+  color: #101010;
+}
+
+.htu-capacity-card--dark .htu-capacity-card__num {
+  color: #edff9e;
+}
+
+.htu-capacity-card__unit {
+  font-family: var(--font-main);
+  font-size: var(--fs-p4);
+  font-weight: var(--fw-sb);
+  line-height: 1.5;
+  color: #101010;
+}
+
+.htu-capacity-card--dark .htu-capacity-card__unit {
+  color: #fff;
 }
 
 .htu-capacity-card__icon img {

@@ -34,6 +34,8 @@ Do NOT remind the user to check on the live site — they already know.
 # Git Rules
 
 - **Always work directly on master. No branches, no worktrees, no PRs.**
+- **Never use the `isolation: "worktree"` parameter when spawning agents.**
+- **Never call EnterWorktree or create any worktree for any reason.**
 - Commit after each page or section is completed
 - Commit message format: "feat: about us page layout"
 - Push directly to master after committing

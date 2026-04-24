@@ -2286,11 +2286,12 @@
     min-width: 0;
   }
   /* Right col: fixed width, sticky */
+  /* top = rolling banner + header height (matches #contents padding-top) + 10px gap */
   .pdp-col-right {
     flex: 0 0 600px;
     width: 600px;
     position: sticky;
-    top: 20px;
+    top: 110px;
     align-self: flex-start;
   }
   .pdp-col-right .infoArea {
@@ -2349,16 +2350,23 @@
 
 @media all and (max-width: 1024px) {
   .pdp-layout {
+    display: flex;
     flex-direction: column;
     gap: 0;
   }
+  .pdp-col-left,
   .pdp-col-right {
+    flex: none;
     width: 100%;
   }
   .pdp-col-right .infoArea {
     position: relative !important;
     top: auto;
     font-family: Pretendard, mincraft;
+  }
+  .xans-product-detail .headingArea {
+    border-top: none;
+    margin-top: 30px;
   }
 }
 
@@ -2369,6 +2377,13 @@
   }
 }
 
+/* sticky top: match header height per breakpoint (banner + header + 10px gap) */
+@media all and (min-width: 1025px) and (max-width: 1440px) {
+  .pdp-col-right {
+    top: 120px;
+  }
+}
+
 #prdReview {
   border-top: 1px solid #e0e0e0;
   padding-top: 50px;
@@ -2376,5 +2391,7 @@
 }
 
 @media (max-width: 1024px) {
-	#container #contents {width: 100% !important;}
+  #container #contents {
+    width: 100% !important;
+  }
 }

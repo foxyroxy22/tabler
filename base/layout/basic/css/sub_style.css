@@ -1293,11 +1293,22 @@
 
 /* 마이페이지 공통 */
 .myshopArea {
+  position: relative !important;
   width: calc(92% - 220px);
   max-width: calc(1230px - 220px) !important;
   padding: 0 0 0 220px !important;
   margin: 0 auto !important;
   min-height: 630px;
+}
+
+/* 마이페이지 좌측 사이드바 포지셔닝 — PC only */
+@media all and (min-width: 1025px) {
+  .myshopArea > .xans-myshop-main {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 200px !important;
+  }
 }
 .myshopArea.section_full {
   width: calc(100% - 220px) !important;
@@ -1334,20 +1345,90 @@ div.ec-base-help ul {
 }
 
 /* 마이페이지 좌측메뉴 */
+.myshopArea .xans-myshop-main .title {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #101010;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #101010;
+  margin-bottom: 0;
+}
+
 .myshopArea .xans-myshop-main > .subTitle {
-  padding-bottom: 6px;
+  margin: 22px 0 0;
+  padding-bottom: 0;
 }
 .myshopArea .xans-myshop-main > .subTitle:first-child {
-  margin: 0;
+  margin: 0 !important;
+  padding-bottom: 0;
 }
+
 .myshopArea .xans-myshop-main h3 {
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #aaa;
+  margin: 0 0 8px;
+}
+
+.myshopArea .xans-myshop-main .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #e8e8e8;
 }
 .myshopArea .xans-myshop-main .menu li {
-  margin: 10px 0 0 0;
+  margin: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.myshopArea .xans-myshop-main .menu li a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: #444;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: color 0.15s ease, padding-left 0.15s ease;
+}
+.myshopArea .xans-myshop-main .menu li a::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 1px;
+  background: #ccc;
+  flex-shrink: 0;
+  transition: background 0.15s ease, width 0.15s ease;
+}
+.myshopArea .xans-myshop-main .menu li a:hover {
+  color: #101010;
+  padding-left: 3px;
+}
+.myshopArea .xans-myshop-main .menu li a:hover::before {
+  background: #101010;
+  width: 16px;
+}
+
+.myshopArea .xans-myshop-main .consult {
+  margin: 24px 0 0;
 }
 .myshopArea .xans-myshop-main .consult a {
-  font-size: 14px;
+  display: block;
+  padding: 9px 0;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background: #101010;
+  color: #fff !important;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.myshopArea .xans-myshop-main .consult a:hover {
+  background: #333;
 }
 
 /* 마이페이지 나의주문처리 현황 */
@@ -2331,9 +2412,6 @@ div.ec-base-help ul {
   }
 
   /* 상품진열 일반형3단 */
-  .ec-base-product .prdList > li {
-    margin: 0 0 35px 0;
-  }
   .ec-base-product ul.grid3 > li {
     width: 100%;
     box-sizing: border-box;
@@ -2715,31 +2793,61 @@ div.ec-base-help ul {
     font-size: 14px;
   }
 
-  /* 마이페이지 좌측메뉴 */
-  .myshopArea .xans-myshop-main .subTitle {
-    display: block;
+  /* 마이페이지 좌측메뉴 — 모바일 */
+  .myshopArea .xans-myshop-main .title {
+    display: none;
+  }
+  .myshopArea .xans-myshop-main > .subTitle {
     margin: 0;
+    padding: 20px 0 6px;
     background: none;
-    padding: 40px 0 16px 0;
+  }
+  .myshopArea .xans-myshop-main > .subTitle:first-child {
+    padding-top: 28px;
+  }
+  .myshopArea .xans-myshop-main h3 {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #aaa;
+    margin: 0 0 4px;
   }
   .myshopArea .xans-myshop-main .menu {
-    border-top: 2px solid #1a1a1a;
-    padding-top: 6px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   .myshopArea .xans-myshop-main .menu li {
-    margin: 12px 0 0 0;
+    margin: 0;
     border: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .myshopArea .xans-myshop-main .menu li:nth-child(odd) {
+    border-right: 1px solid #f0f0f0;
   }
   .myshopArea .xans-myshop-main .menu li a {
-    font-size: 14px;
-    color: #6a6a6a;
-    padding: 0;
+    display: block;
+    font-size: 13px;
+    color: #444;
+    padding: 10px 12px;
+    text-decoration: none;
+    gap: 0;
+  }
+  .myshopArea .xans-myshop-main .menu li a::before {
+    display: none;
   }
   .myshopArea .xans-myshop-main .menu li a:after {
     display: none;
   }
   .myshopArea .xans-myshop-main .consult {
-    margin: 40px 0 0;
+    margin: 20px 0 0;
+  }
+  .myshopArea .xans-myshop-main .consult a {
+    border-radius: 0;
+    text-transform: none;
+    font-size: 13px;
+    letter-spacing: 0;
   }
 
   /* 마이페이지 주문내역 조회 */

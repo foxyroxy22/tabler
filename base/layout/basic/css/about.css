@@ -33,7 +33,7 @@
   --gutter: 32px;
 
   --text-color: #101010;
-  --bg-color: #fff9f2;
+  --bg-color: #ffffff;
 }
 
 /* --- Tablet Font Sizes (1024px 이하) --- */
@@ -232,8 +232,14 @@
   font-weight: var(--fw-sb);
   margin: -20px 0 32px;
 }
-.au-split__img {
-  background: #e8e8e4;
+.au-split__img.beach {
+  background: url(https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/about_beach.jpg)
+    no-repeat center/cover;
+  min-height: 500px;
+}
+.au-split__img.melting {
+  background: url(https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/melting.gif)
+    no-repeat center/cover;
   min-height: 500px;
 }
 
@@ -309,7 +315,18 @@
   aspect-ratio: 1 / 1;
   border-right: 1px solid #101010;
 }
+.au-gallery__item:first-child {
+  background: url(https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/about_visual01.jpg)
+    no-repeat center/cover;
+}
+
+.au-gallery__item:nth-child(2) {
+  background: url(https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/about_visual02.jpg)
+    no-repeat center/cover;
+}
 .au-gallery__item:last-child {
+  background: url(https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/about_visual03.jpg)
+    no-repeat center/cover;
   border-right: none;
 }
 
