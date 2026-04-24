@@ -545,3 +545,12 @@
     gap: 16px;
   }
 }
+
+/* ========================
+   Responsive Utilities
+   ======================== */
+br.show-m { display: none; }
+
+@media (max-width: 1024px) {
+  br.show-m { display: block; }
+}

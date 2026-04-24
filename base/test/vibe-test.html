@@ -14,7 +14,7 @@
       </p>
       <a
         href="https://tabler-tabler.com/test/vibe-test-form.html"
-        class="vt-hero__btn btn btn-sm"
+        class="vt-hero__btn"
         >START TEST</a
       >
     </div>
@@ -63,7 +63,7 @@
 
       pos -= PX_PER_SEC * (dt / 1000);
       if (-pos >= halfWidth) pos += halfWidth; // seamless reset
-      track.style.transform = "translateX(" + pos + "px)";
+      track.style.transform = "translate3d(" + pos + "px, 0, 0)";
       requestAnimationFrame(tick);
     }
 
@@ -88,4 +88,36 @@
       window.addEventListener("load", startScroll);
     }
   })();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var logo = document.querySelector(".logo img");
+    if (logo)
+      logo.src =
+        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/logo_w.png";
+
+    var btn = document.querySelector(".vt-hero__btn");
+    if (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.href =
+          "https://tabler-tabler.com/test/vibe-test-form.html";
+      });
+    }
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        var header = document.getElementById("header");
+        if (!header || header.classList.contains("sidebar-open")) return;
+        if (window.scrollY > 10) {
+          header.classList.add("is-scrolled");
+        } else {
+          header.classList.remove("is-scrolled");
+        }
+      },
+      { passive: true },
+    );
+  });
 </script>

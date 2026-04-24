@@ -338,6 +338,38 @@ jQuery(document).ready(function () {
     switchTo(current + 1);
   });
 
+  /* 히어로 패널 터치 스와이프 */
+  var heroTouchStartX = 0;
+  var heroTouchDiffX = 0;
+  var heroPanel = document.querySelector("#hero .product-panel");
+  if (heroPanel) {
+    heroPanel.addEventListener(
+      "touchstart",
+      function (e) {
+        heroTouchStartX = e.touches[0].clientX;
+        heroTouchDiffX = 0;
+      },
+      { passive: true },
+    );
+    heroPanel.addEventListener(
+      "touchmove",
+      function (e) {
+        heroTouchDiffX = e.touches[0].clientX - heroTouchStartX;
+      },
+      { passive: true },
+    );
+    heroPanel.addEventListener("touchend", function () {
+      if (heroTouchDiffX < -40) {
+        resetAuto();
+        switchTo(current + 1);
+      } else if (heroTouchDiffX > 40) {
+        resetAuto();
+        switchTo(current - 1);
+      }
+      heroTouchDiffX = 0;
+    });
+  }
+
   // ✅ Debounce 적용 (500ms 지연)
   window.addEventListener("resize", debounce(onResize, 500));
 

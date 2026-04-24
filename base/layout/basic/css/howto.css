@@ -327,7 +327,8 @@
   color: #101010;
 }
 
-.htu-capacity-card--dark .htu-capacity-card__num {
+.htu-capacity-card--dark .htu-capacity-card__num,
+.htu-capacity-card--dark .htu-capacity-card__unit {
   color: #edff9e;
 }
 
@@ -512,48 +513,36 @@
 .htu-cta {
   background-color: #101010;
   border-top: 1px solid #101010;
-  padding: 50px var(--gutter);
+  padding: 80px 0;
   text-align: center;
 }
 
 .htu-cta__inner {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-}
-
-.htu-cta__heading {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
+  margin: 0 auto;
 }
 
 .htu-cta__title {
-  font-family: var(--font-point);
   font-size: var(--fs-h2);
   line-height: 1.2;
-  margin: 0;
+  margin: 0 0 20px;
   color: #fff;
   text-transform: uppercase;
 }
 
 .htu-cta__sub {
-  font-family: var(--font-main);
+  display: block;
   font-weight: var(--fw-sb);
   font-size: var(--fs-p4);
   line-height: 1.5;
-  margin: 0;
+  margin: 0 0 20px;
   color: #fff;
 }
 
 .htu-cta__desc {
-  font-family: var(--font-main);
   font-weight: var(--fw-reg);
   font-size: var(--fs-p5);
   line-height: 1.5;
-  margin: 0;
+  margin: 0 0 35px;
   color: #fff;
 }
 
@@ -609,6 +598,16 @@
    Responsive — Tablet (≤1024px)
    ======================== */
 @media (max-width: 1024px) {
+  .htu-hero,
+  .htu-setup,
+  .htu-details__header,
+  .htu-feature,
+  .htu-capacity,
+  .htu-insulation__content {
+    padding-left: var(--margin);
+    padding-right: var(--margin);
+  }
+
   .htu-steps {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -624,15 +623,15 @@
   }
 
   .htu-feature--rev .htu-feature__img {
-    order: 0;
+    order: -1;
   }
 
   .htu-feature__text {
-    padding: 40px var(--gutter);
+    padding: 40px var(--margin);
   }
 
   .htu-feature--rev .htu-feature__text {
-    padding: 40px var(--gutter);
+    padding: 40px var(--margin);
   }
 
   .htu-insulation {
@@ -654,6 +653,14 @@
     grid-template-columns: 1fr;
   }
 
+  .htu-cta {
+    padding: 60px 24px;
+  }
+
+  .htu-cta__sub {
+    margin: 0 0 12px;
+  }
+
   .htu-cta__btns {
     flex-direction: column;
     align-items: center;
@@ -664,10 +671,14 @@
   }
 
   .htu-feature__text {
-    padding: 30px var(--gutter);
+    padding: 30px var(--margin);
+    gap: 8px;
   }
 
   .htu-feature--rev .htu-feature__text {
-    padding: 30px var(--gutter);
+    padding: 30px var(--margin);
+  }
+  .htu-details__header {
+    padding: 30px var(--gutter) 20px;
   }
 }

@@ -116,16 +116,6 @@
   </section>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var logo = document.querySelector(".logo img");
-    if (logo) {
-      logo.src =
-        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/logo_w.png";
-    }
-  });
-</script>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(document).ready(function () {
@@ -166,6 +156,22 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     var logo = document.querySelector(".logo img");
-    if (logo) logo.src = "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/logo_w.png";
+    if (logo)
+      logo.src =
+        "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/logo_w.png";
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        var header = document.getElementById("header");
+        if (!header || header.classList.contains("sidebar-open")) return;
+        if (window.scrollY > 10) {
+          header.classList.add("is-scrolled");
+        } else {
+          header.classList.remove("is-scrolled");
+        }
+      },
+      { passive: true },
+    );
   });
 </script>

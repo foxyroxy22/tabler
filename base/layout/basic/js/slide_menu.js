@@ -11,6 +11,12 @@ function openSidebar() {
   if (hamBtn) hamBtn.classList.add("is-open");
   document.body.classList.add("no-scroll");
   if (header) header.classList.add("sidebar-open");
+  var logoImg = document.querySelector(".logo img");
+  if (logoImg) {
+    logoImg.dataset.originalSrc = logoImg.src;
+    logoImg.src =
+      "https://ecimg.cafe24img.com/pg2374b18773352058/tablertabler/web/upload/images/logo_b.png";
+  }
 }
 
 function closeSidebar() {
@@ -22,6 +28,11 @@ function closeSidebar() {
   sidebar.classList.remove("sidebar--open");
   if (hamBtn) hamBtn.classList.remove("is-open");
   document.body.classList.remove("no-scroll");
+  var logoImg = document.querySelector(".logo img");
+  if (logoImg && logoImg.dataset.originalSrc) {
+    logoImg.src = logoImg.dataset.originalSrc;
+    delete logoImg.dataset.originalSrc;
+  }
   if (header) {
     header.classList.remove("sidebar-open");
     if (window.innerWidth <= 1024) {
