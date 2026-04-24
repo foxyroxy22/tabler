@@ -14,7 +14,8 @@
       "WebFetch(domain:manayerbamate.com)",
       "mcp__Claude_in_Chrome__tabs_create_mcp",
       "Bash(curl -s \"https://manayerbamate.com/\")",
-      "Bash(curl -s \"https://manayerbamate.com/cdn/shop/t/18/assets/global.js?v=70175767351616846921743419969\")"
+      "Bash(curl -s \"https://manayerbamate.com/cdn/shop/t/18/assets/global.js?v=70175767351616846921743419969\")",
+      "mcp__1cc96c58-1e18-4022-9e26-0fa6de513f07__get_design_context"
     ]
   }
 }
