@@ -110,7 +110,9 @@ br.show-m {
   background-color: #101010;
   color: #fff;
   min-height: 100vh;
+  min-height: 100svh; /* iOS Safari: excludes browser chrome */
   height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -158,11 +160,13 @@ br.show-m {
   background-color: #edff9e;
   box-shadow: 3px 3px 0px #fff;
   cursor: pointer;
-    border-radius: 40px;
-      transition:
+  border-radius: 40px;
+  transition:
     transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
-    border: 1px solid #101010;
+  border: 1px solid #101010;
+  touch-action: manipulation; /* removes iOS 300ms tap delay */
+  -webkit-touch-callout: none;
 }
 .vt-hero__btn:hover {
   box-shadow: 0 0 0 #fff;
@@ -179,10 +183,20 @@ br.show-m {
   pointer-events: none;
 }
 
+@keyframes vt-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .vt-track {
   display: flex;
   width: max-content;
   will-change: transform;
+  animation: vt-scroll 18s linear infinite;
 }
 
 /* ========================

@@ -549,8 +549,12 @@
 /* ========================
    Responsive Utilities
    ======================== */
-br.show-m { display: none; }
+br.show-m {
+  display: none;
+}
 
 @media (max-width: 1024px) {
-  br.show-m { display: block; }
+  br.show-m {
+    display: block;
+  }
 }

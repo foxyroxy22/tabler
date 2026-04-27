@@ -99,7 +99,7 @@ body:has(.au-wrap) #container #contents {
   margin: 50px auto 0;
 }
 body:has(.htu-wrap) #container #contents {
-  margin: 40px auto 0;
+  margin: 20px auto 0;
 }
 @media (max-width: 1024px) {
   body:has(.au-wrap) #container #contents {
